@@ -1,0 +1,19 @@
+{
+  "name": "pelican-ride",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "鹈鹕骑行 · Pelican Ride — 程序化 Toon 3D 骑行页面（Three.js r180，零外部资源）",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "dev": "node tools/serve.mjs",
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "url": "http://127.0.0.1:65295/?intro=0&target=14",
+  "dir": ".",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "ready_flag": "__sceneReady",
+  "ready_timeout": false,
+  "motion": {
+    "interval_ms": 2000,
+    "differs": true,
+    "sha_before": "0168557f34b07bb56e96b8cde401b715a27c533f9a65461d493fa84b4c0c1d68",
+    "sha_after": "d5520239196ca8ce17bc970134fa971b773685869c60093cfccdfac22985e4da"
+  },
+  "gpu_requested": true,
+  "capture_mode": "gpu",
+  "webgl_renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "image_format": "png",
+  "views": [
+    {
+      "name": "default",
+      "file": "default.png",
+      "sha256": "0168557f34b07bb56e96b8cde401b715a27c533f9a65461d493fa84b4c0c1d68",
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6734,
+        "luma_mean": 0.6734,
+        "luma_std": 0.2206,
+        "luma_median_cell": 0.6993,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1389,
+        "flat_cells": 80,
+        "flat_luma": 0.4032,
+        "rest_luma": 0.7169,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "default-motion",
+      "file": "default-motion.png",
+      "sha256": "d5520239196ca8ce17bc970134fa971b773685869c60093cfccdfac22985e4da",
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6716,
+        "luma_mean": 0.6716,
+        "luma_std": 0.2236,
+        "luma_median_cell": 0.707,
+        "dark_fraction": 0,
+        "flat_fraction": 0.151,
+        "flat_cells": 87,
+        "flat_luma": 0.4034,
+        "rest_luma": 0.7194,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "behind",
+      "file": "behind.png",
+      "sha256": "418797142b6a5558eea35a1cd6c81028f76d652ee0b7adf690aa3a8b475b1782",
+      "requested": "behind",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6588,
+        "luma_mean": 0.6588,
+        "luma_std": 0.2247,
+        "luma_median_cell": 0.6826,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1736,
+        "flat_cells": 100,
+        "flat_luma": 0.4017,
+        "rest_luma": 0.7128,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "sidesea",
+      "file": "sidesea.png",
+      "sha256": "640e73bee692b0eb81bcc8786bc5c84562b49e6396acc1ad52745086945650e4",
+      "requested": "sideSea",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.7424,
+        "luma_mean": 0.7424,
+        "luma_std": 0.1931,
+        "luma_median_cell": 0.7441,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0417,
+        "flat_cells": 24,
+        "flat_luma": 0.451,
+        "rest_luma": 0.755,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "sideland",
+      "file": "sideland.png",
+      "sha256": "cfdac03d402f792886697b34cdc31365d4bb5a4350c851f02808cd56b088d000",
+      "requested": "sideLand",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6543,
+        "luma_mean": 0.6543,
+        "luma_std": 0.1982,
+        "luma_median_cell": 0.65,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0625,
+        "flat_cells": 36,
+        "flat_luma": 0.9624,
+        "rest_luma": 0.6337,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "front34",
+      "file": "front34.png",
+      "sha256": "ae772088b3f3e8f90c88c7d0eeecb7549b9f27fa4966ca0d2e9ab5b8938730dc",
+      "requested": "front34",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6735,
+        "luma_mean": 0.6735,
+        "luma_std": 0.225,
+        "luma_median_cell": 0.7232,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1771,
+        "flat_cells": 102,
+        "flat_luma": 0.415,
+        "rest_luma": 0.7292,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "ahead",
+      "file": "ahead.png",
+      "sha256": "91edda1c228154601511b94cb7b7c9b789a1854c858cf38e9e0b4d96659a97db",
+      "requested": "ahead",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6518,
+        "luma_mean": 0.6518,
+        "luma_std": 0.2281,
+        "luma_median_cell": 0.6616,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1615,
+        "flat_cells": 93,
+        "flat_luma": 0.4002,
+        "rest_luma": 0.7003,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "low",
+      "file": "low.png",
+      "sha256": "8b7e771bcae028816055f0d8c198b92975ed2ea5bf3e76a2c103babbcdc80900",
+      "requested": "low",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6742,
+        "luma_mean": 0.6742,
+        "luma_std": 0.2065,
+        "luma_median_cell": 0.6933,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0868,
+        "flat_cells": 50,
+        "flat_luma": 0.4045,
+        "rest_luma": 0.6999,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "high",
+      "file": "high.png",
+      "sha256": "28df24db448b8e351e8d554579d85050ac7069b4ec6b09283b10ea90db4cff5e",
+      "requested": "high",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6773,
+        "luma_mean": 0.6773,
+        "luma_std": 0.1963,
+        "luma_median_cell": 0.6547,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0608,
+        "flat_cells": 35,
+        "flat_luma": 0.9632,
+        "rest_luma": 0.6588,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "far34",
+      "file": "far34.png",
+      "sha256": "6d05cf00a255361c5513e18fccf195d92c94baa76884822c1d5d8507d0b2e665",
+      "requested": "far34",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6771,
+        "luma_mean": 0.6771,
+        "luma_std": 0.1993,
+        "luma_median_cell": 0.6463,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0625,
+        "flat_cells": 36,
+        "flat_luma": 0.9616,
+        "rest_luma": 0.6581,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "close34",
+      "file": "close34.png",
+      "sha256": "e1f0bae1bfda5c2c8817bbcc797a857bd11d5c7b04580feea3a5c277a7d0fab6",
+      "requested": "close34",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6795,
+        "luma_mean": 0.6795,
+        "luma_std": 0.2019,
+        "luma_median_cell": 0.6483,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0625,
+        "flat_cells": 36,
+        "flat_luma": 0.9624,
+        "rest_luma": 0.6607,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "follow",
+      "file": "follow.png",
+      "sha256": "c4299de8dd123ac7a2acf06f3dcc2bc2076bb6a1be4b56a20a847dd202e49452",
+      "requested": "follow",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6777,
+        "luma_mean": 0.6777,
+        "luma_std": 0.2162,
+        "luma_median_cell": 0.7156,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1458,
+        "flat_cells": 84,
+        "flat_luma": 0.4085,
+        "rest_luma": 0.7237,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "side",
+      "file": "side.png",
+      "sha256": "b86721a4e22b9b38f0ba5fa541a83c9c1983a0a4c0d4754e7d12c5a684e1affb",
+      "requested": "side",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6218,
+        "luma_mean": 0.6218,
+        "luma_std": 0.1916,
+        "luma_median_cell": 0.6177,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0764,
+        "flat_cells": 44,
+        "flat_luma": 0.9463,
+        "rest_luma": 0.5949,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "close",
+      "file": "close.png",
+      "sha256": "d7ad6fc0cfb157c1960362d13627417faf7298e42a2257b0bfe15d204d03f9dc",
+      "requested": "close",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.7212,
+        "luma_mean": 0.7212,
+        "luma_std": 0.2093,
+        "luma_median_cell": 0.7415,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0417,
+        "flat_cells": 24,
+        "flat_luma": 0.4163,
+        "rest_luma": 0.7345,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "orbit",
+      "file": "orbit.png",
+      "sha256": "f263544e00496d8ffcd51522c2f0c37c9eeb48c82e7023ccef9e2f274bbfea45",
+      "requested": "orbit",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6617,
+        "luma_mean": 0.6617,
+        "luma_std": 0.2288,
+        "luma_median_cell": 0.7031,
+        "dark_fraction": 0,
+        "flat_fraction": 0.1319,
+        "flat_cells": 76,
+        "flat_luma": 0.4063,
+        "rest_luma": 0.7005,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "director",
+      "file": "director.png",
+      "sha256": "ef49c9bd8ac3726f4d2752c36e02894fdd88dd942c0a26328628136972c4ff4c",
+      "requested": "director",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6585,
+        "luma_mean": 0.6585,
+        "luma_std": 0.1981,
+        "luma_median_cell": 0.6702,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0694,
+        "flat_cells": 40,
+        "flat_luma": 0.3809,
+        "rest_luma": 0.6792,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    },
+    {
+      "name": "pov",
+      "file": "pov.png",
+      "sha256": "1ff8597e4aa6eadb2bfd68d239dd6a5dd599300bb16c5ce164dd2a8f67e93c35",
+      "requested": "pov",
+      "applied": false,
+      "view_quality": {
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "wall_fraction": 0,
+        "wall_columns": 0,
+        "wall_luma": null,
+        "wall_rest_luma": 0.6859,
+        "luma_mean": 0.6859,
+        "luma_std": 0.1955,
+        "luma_median_cell": 0.6897,
+        "dark_fraction": 0,
+        "flat_fraction": 0.0486,
+        "flat_cells": 28,
+        "flat_luma": 0.973,
+        "rest_luma": 0.6712,
+        "measured": true,
+        "usable": true,
+        "reason": "usable"
+      }
+    }
+  ],
+  "clicks": [],
+  "unusable_views": [],
+  "view_quality_thresholds": {
+    "dark_luma": 0.06,
+    "near_black_luma_mean": 0.04,
+    "near_black_dark_fraction": 0.85,
+    "flat_min_fraction": 0.3,
+    "flat_luma_gap": 0.25,
+    "wall_min_fraction": 0.2,
+    "wall_column_std": 0.03,
+    "low_contrast_luma_std": 0.04,
+    "grid_cols": 32,
+    "grid_rows": 18
+  },
+  "measured_region": {
+    "x": 0,
+    "y": 0,
+    "width": 1280,
+    "height": 720
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "started": "2026-11-24T10:53:01+00:00",
+  "finished": "2026-11-24T10:53:13+00:00",
+  "playwright_version": "1.64.1"
+}

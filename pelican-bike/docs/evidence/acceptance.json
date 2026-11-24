@@ -1,0 +1,326 @@
+{
+ "results": [
+  {
+   "name": "desk: 启动无错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "desk: 初始在开场页",
+   "ok": true,
+   "detail": "intro"
+  },
+  {
+   "name": "desk: 页面无横向溢出",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 点击“开始骑行”进入骑行",
+   "ok": true,
+   "detail": "ride"
+  },
+  {
+   "name": "desk: 音频上下文在真实点击后运行",
+   "ok": true,
+   "detail": "{'ctx': 'running', 'bpm': 84, 'muted': False, 'music': True, 'volume': 0.8}"
+  },
+  {
+   "name": "desk: 按住 ↑ 提高目标速度",
+   "ok": true,
+   "detail": "kmh=11.1"
+  },
+  {
+   "name": "desk: 定速 18 km/h 巡航",
+   "ok": true,
+   "detail": "kmh=17.32 mode=pedal"
+  },
+  {
+   "name": "desk: 2 挡踏频约 57 rpm",
+   "ok": true,
+   "detail": "cadence=54.5"
+  },
+  {
+   "name": "desk: G 换挡后挡位变化、踏频下降、速度不变",
+   "ok": true,
+   "detail": "gear=2 cadence=41.0"
+  },
+  {
+   "name": "desk: 空格起跳",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "name": "desk: 落地",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 车铃不报错",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "desk: 按住 ↓ 刹车停下",
+   "ok": true,
+   "detail": "mode=stop kmh=0.00"
+  },
+  {
+   "name": "desk: C 切到侧跟",
+   "ok": true,
+   "detail": "side"
+  },
+  {
+   "name": "desk: 4 切到环绕",
+   "ok": true,
+   "detail": "orbit"
+  },
+  {
+   "name": "desk: 5 切到导演",
+   "ok": true,
+   "detail": "director"
+  },
+  {
+   "name": "desk: 6 切到鹈鹕视角",
+   "ok": true,
+   "detail": "pov"
+  },
+  {
+   "name": "desk: T 切到 sunset",
+   "ok": true,
+   "detail": "hour=18.20"
+  },
+  {
+   "name": "desk: T 切到 night",
+   "ok": true,
+   "detail": "hour=22.00"
+  },
+  {
+   "name": "desk: T 切到 dawn",
+   "ok": true,
+   "detail": "hour=6.10"
+  },
+  {
+   "name": "desk: T 切到 day",
+   "ok": true,
+   "detail": "hour=13.00"
+  },
+  {
+   "name": "desk: 默认是写实画风（PBR 材质 + 电影后期 + 深色界面）",
+   "ok": true,
+   "detail": "has-bars is-real"
+  },
+  {
+   "name": "desk: 2:1 电影黑边",
+   "ok": true,
+   "detail": "黑边高 40px"
+  },
+  {
+   "name": "desk: 黑边不压住界面",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 夜里车灯与路灯点亮、曝光抬高",
+   "ok": true,
+   "detail": "{'head': 28.825103861578434, 'lamp': 9, 'exposure': 7}"
+  },
+  {
+   "name": "desk: V 切到画风 1，网格全部换回赛璐璐材质",
+   "ok": true,
+   "detail": "1 {'toon': 155, 'pbr': 0}"
+  },
+  {
+   "name": "desk: V 切到画风 2，网格全部换回赛璐璐材质",
+   "ok": true,
+   "detail": "2 {'toon': 155, 'pbr': 0}"
+  },
+  {
+   "name": "desk: V 切到画风 3，网格全部换回赛璐璐材质",
+   "ok": true,
+   "detail": "3 {'toon': 155, 'pbr': 0}"
+  },
+  {
+   "name": "desk: V 回到写实：材质、雾、环境光、后期都恢复",
+   "ok": true,
+   "detail": "{'toon': 0, 'pbr': 154}"
+  },
+  {
+   "name": "desk: 写实画风下描边全部隐藏，赛璐璐下全部显示",
+   "ok": true,
+   "detail": "{'n': 121, 'shown': 0}"
+  },
+  {
+   "name": "desk: 切回赛璐璐时描边恢复",
+   "ok": true,
+   "detail": "100%"
+  },
+  {
+   "name": "desk: X 打开骨架检视",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: H 隐藏界面",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: P 暂停后时间不再推进",
+   "ok": true,
+   "detail": "57.067→57.067"
+  },
+  {
+   "name": "desk: 再按 P 继续",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 到这里为止全程没有页面错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "desk: ? 打开说明",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: Esc 关闭说明",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 设置抽屉打开",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 恢复默认造型",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: K 让鹈鹕张口再合上",
+   "ok": true,
+   "detail": "0.00 → 0.84"
+  },
+  {
+   "name": "desk: 被叫到时转头看向镜头（镜头在左前方，头向左转）",
+   "ok": true,
+   "detail": "head yaw=1.20 rad"
+  },
+  {
+   "name": "desk: 按车铃后最近的海鸥平滑爬升再落回",
+   "ok": true,
+   "detail": "y 10.4 → 0.2 秒后 +0.48 → 2.5 秒后 19.6 → 11.5 秒后 10.1 m（距离 43 m）"
+  },
+  {
+   "name": "desk: 焦点在按钮上时回车激活按钮",
+   "ok": true,
+   "detail": "follow → side"
+  },
+  {
+   "name": "desk: 焦点在按钮上时空格激活按钮、不触发跳跃",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 说明面板内 Tab 循环不跑到遮罩后面",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 画质“低”时阴影灯确实关闭",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 画质“高”时阴影灯恢复",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desk: 关掉景深 / 辉光 / 黑边",
+   "ok": true,
+   "detail": "{'dof': True, 'bloom': True, 'bar': 40} → {'dof': False, 'bloom': False, 'bar': 0}"
+  },
+  {
+   "name": "desk: 画质“高”时自动标定留在第 2 档",
+   "ok": true,
+   "detail": "{'cost': None, 'level': 2}"
+  },
+  {
+   "name": "desk: 重新打开后恢复",
+   "ok": true,
+   "detail": "{'dof': True, 'bloom': True, 'bar': 40}"
+  },
+  {
+   "name": "desk: 写实画风帧耗时",
+   "ok": true,
+   "detail": "高 9.66 ms / 中 4.83 ms / 低 1.97 ms"
+  },
+  {
+   "name": "desk: R 回到出发点",
+   "ok": true,
+   "detail": "s=64.3"
+  },
+  {
+   "name": "desk: 性能读数",
+   "ok": true,
+   "detail": "fps=441 calls=327 tris=1265664 qLevel=2 buildMs=744 1280x720"
+  },
+  {
+   "name": "desk: 实时循环帧率",
+   "ok": true,
+   "detail": "32 fps at qLevel 2, 336 calls, 1370468 tris"
+  },
+  {
+   "name": "mob: 启动无错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "mob: 初始在开场页",
+   "ok": true,
+   "detail": "intro"
+  },
+  {
+   "name": "mob: 页面无横向溢出",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mob: 减少动效时不自动环绕",
+   "ok": true,
+   "detail": "follow"
+  },
+  {
+   "name": "mob: 竖屏没有电影黑边（画面比 2:1 窄）",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mob: 竖屏下后期链的缓冲区与画布同尺寸",
+   "ok": true,
+   "detail": "[390, 844]"
+  },
+  {
+   "name": "mob: 骑行时触屏按钮不压住数据卡",
+   "ok": true,
+   "detail": "{'card': {'l': 12, 't': 544, 'r': 244, 'b': 756, 'h': 212}, 'touch': {'l': 126, 't': 772, 'r': 374, 'b': 828, 'h': 56}, 'toasts': {'l': 97.5, 't': 132, 'r': 292.5, 'b': 184, 'h': 52}, 'touchShown': True}"
+  },
+  {
+   "name": "mob: 提示条贴着顶部（不盖数据卡）",
+   "ok": true,
+   "detail": "{'l': 97.5, 't': 132, 'r': 292.5, 'b': 184, 'h': 52}"
+  },
+  {
+   "name": "mob: 设置抽屉是贴底的半屏面板",
+   "ok": true,
+   "detail": "{'t': 325.609375, 'b': 832, 'h': 506.390625, 'vh': 844}"
+  }
+ ],
+ "failed": 0,
+ "seconds": 66.7
+}

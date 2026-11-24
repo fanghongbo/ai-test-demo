@@ -1,0 +1,80 @@
+{
+ "results": [
+  {
+   "name": "五分钟仿真后状态全部为有限数",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "五分钟后仍在骑行且里程累计合理",
+   "ok": true,
+   "detail": "kmh=17.2 distance=2625 m s=267.2"
+  },
+  {
+   "name": "跟拍镜头与主体距离在 6–12 m",
+   "ok": true,
+   "detail": "9.22 m"
+  },
+  {
+   "name": "特写镜头与主体距离在 2–5 m",
+   "ok": true,
+   "detail": "3.55 m"
+  },
+  {
+   "name": "主体坐标为有限数",
+   "ok": true,
+   "detail": "[64.04290460814016, 2.8732629674106516, -100.57642975641393]"
+  },
+  {
+   "name": "40 次重建鹈鹕后几何体数不增长",
+   "ok": true,
+   "detail": "178 → 178"
+  },
+  {
+   "name": "40 次重建鹈鹕后贴图数不增长",
+   "ok": true,
+   "detail": "219 → 219"
+  },
+  {
+   "name": "40 次重建鹈鹕后着色器程序数不增长",
+   "ok": true,
+   "detail": "67 → 67"
+  },
+  {
+   "name": "40 次重建鹈鹕后网格数不增长",
+   "ok": true,
+   "detail": "361 → 361"
+  },
+  {
+   "name": "重建后 JS 堆没有明显膨胀（< 24 MB）",
+   "ok": true,
+   "detail": "149.7 MB → 149.7 MB"
+  },
+  {
+   "name": "鹈鹕视角下头部自遮挡件被隐藏",
+   "ok": true,
+   "detail": "{'skull': False, 'eyeL': False, 'eyeR': False, 'helmet': False, 'helmetTrim': False, 'crest': False}"
+  },
+  {
+   "name": "离开鹈鹕视角后头部部件全部恢复",
+   "ok": true,
+   "detail": "{'skull': True, 'eyeL': True, 'eyeR': True, 'helmet': True, 'helmetTrim': True, 'crest': True}"
+  },
+  {
+   "name": "dt 为 0 / 极小 / 上限时状态仍为有限数",
+   "ok": true,
+   "detail": "{'phase': 'ride', 'paused': False, 'v': 4.704466621569038, 'kmh': 16.93607983764854, 'cadence': 71.02663564586955, 'gear': 0, 'mode': 'pedal', 'crank': 5.431605702679641, 's': 322.1974891846151, 'hour': 18.200000000000003, 'cam': 'follow', 'style': 2, 'air': False, 'distance': 2679.824199942179, 'time': 325.4333383333666}"
+  },
+  {
+   "name": "全程无页面错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "提示条没有无限堆积",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "failed": 0
+}

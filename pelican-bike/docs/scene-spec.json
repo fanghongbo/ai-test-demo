@@ -1,0 +1,138 @@
+{
+ "schema_version": 1,
+ "artifact_id": "pelican-ride",
+ "objective": "让观者一眼认出一只鹈鹕在骑自行车，并且想亲手骑一段：调速、跳跃、按铃、看它转头、等鱼跃出水面。",
+ "selected_records": [
+  "knowledge.style-cel-shaded",
+  "knowledge.style-cartoon",
+  "knowledge.style-stylized",
+  "knowledge.hero-prop-detail-hierarchy",
+  "knowledge.hero-and-context",
+  "knowledge.shared-stylized-outdoor-daylight",
+  "knowledge.lighting-time-of-day-sun-arc",
+  "knowledge.lighting-mood-dusk-golden-hour",
+  "knowledge.lighting-mood-night-lantern",
+  "knowledge.material-water-surface-cues",
+  "knowledge.camera-orbit-follow-rig",
+  "knowledge.reasoning-creature-body-plan-coherence",
+  "recipe.bicycle-drivetrain-ratio"
+ ],
+ "guidance_read_beyond_records": [
+  "3dviz-pro-max：object-reasoning、object-craft、motion-and-state、lighting-direction-and-scale、subject-clarity-and-motion、design-synthesis，以及 visual-anti-slop / inspection-per-frame 两份检查表",
+  "img2threejs：分阶段雕刻（块面 → 结构 → 形体 → 材质 → 灯光 → 交互）、转台多视角、附着与关节正确性、结构完整性清单；未使用其 spec → factory 代码生成器",
+  "dataviz：stat tile、meter、sparkline 的契约（先选形式再配色；文字不穿数据色；单系列不配图例）",
+  "landing-page-design：字阶、间距、圆角、状态集、动效曲线、减少动效、390 px 检查",
+  "cartoon-style 与 cozy-wholesome-mood：剪影优先、圆润道具、暖色主光、友好视高"
+ ],
+ "custom_choices": [
+  "全程在显示色域做光照混合并关闭色调映射：赛璐璐的硬边色阶是造型的核心，任何曲线都会把它揉软；记录里的默认强度是按 ACES 调的，没有照搬。",
+  "主角与全部道具都由自定义放样 / 合批生成，没有用目录里的任何蓝图：需要的形体（带脊的喙、上下不对称的喉囊、香肠形关节）蓝图不覆盖。",
+  "太阳位置按时刻手工指定而不是查表：环线一圈 807 米、骑行一圈约三分钟，需要的是氛围一致而非天文准确。",
+  "自动画质量单帧真实耗时（渲染后读回像素强制同步）而不是帧率：无头浏览器实测帧率被出帧节拍钉在 32，与渲染开销无关。",
+  "链路上保留飞轮与滑行：目录里的传动配方声明不含飞轮，而滑行时踏板回到水平、飞轮哒哒响是这段骑行的重要行为。",
+  {
+   "date": "2026-11-24",
+   "topic": "render-style",
+   "choice": "默认画风改为写实（物理大气 + PBR + 海水倒影 + 电影后期），赛璐璐 / 排线 / 线稿保留，V 循环切换",
+   "why": "用户要求“3D 写实场景 + 电影画质”；几何与仿真不动，只换光照 / 材质 / 成像这一层，便于逐像素确认卡通画风没被改坏",
+   "tradeoffs": [
+    "夜景是电影式（月光远比真实亮）",
+    "造型仍受程序化放样几何限制，特写偏卡通",
+    "“低”画质关掉遮蔽 / 景深 / 多重采样 / 倒影"
+   ]
+  }
+ ],
+ "runtime": {
+  "engine": "three@0.180.0",
+  "build": "esbuild@0.28.2（IIFE，传统 <script>，file:// 可直接加载）",
+  "post": "无后处理管线（保持描边锐利；导演黑场与光晕由界面层与专用材质完成）",
+  "pixel_ratio_cap": 2,
+  "remote_runtime_assets": false,
+  "physics": "无物理引擎：纵向运动是简化运动学模型，围巾是自写的 Verlet 布料",
+  "render_scheduling": "requestAnimationFrame；暂停或页面隐藏时不推进仿真与全局时钟；2048 px 阴影贴图，正交范围 ±17 m 跟随主体"
+ },
+ "scenes": [
+  {
+   "id": "island-ride",
+   "motion": "可变步长的运动学回放（dt 上限 50 ms）；布料按 1/120 s 子步",
+   "entities": [
+    "鹈鹕骑手与自行车（主角）",
+    "807 m 闭合环线、路面、步道、路缘石",
+    "地形高度场、海面、天空、云、远岛",
+    "按弧长分 24 段合批的道具（栏杆、路灯、棕榈、长椅、遮阳伞、路牌、野餐桌、帐篷、划艇、救生塔、花丛、灌木）",
+    "灯塔与守塔人小屋、栈桥鱼铺",
+    "8 只海鸥、5 条跃鱼、浮标与帆船",
+    "比例参照：自行车轮外径 0.69 m、路灯高约 3.8 m、护栏高约 1.03 m"
+   ],
+   "actions": [
+    "按住 ↑ ↓ 调速",
+    "跳跃",
+    "按车铃（惊飞海鸥）",
+    "换挡",
+    "切换 6 种镜头；拖动环绕；滚轮远近",
+    "切换 4 个时刻；昼夜流转",
+    "切换 3 种画风",
+    "点鹈鹕让它看镜头叫一声；点海面让鱼跃出",
+    "暂停；隐藏界面；显示骨架",
+    "设置：目标速度、描边粗细、画质、音量、音乐、减少动效、造型参数（喙、喉囊、颈、体型）"
+   ],
+   "boundaries": [
+    "太阳位置是艺术设定，不是天文模型；时刻名称只是氛围标签",
+    "纵向运动不是功率模型：没有风阻系数、骑行功率或真实的坡度阻力系数",
+    "跳跃是独立的竖直抛体线，与水平速度无关",
+    "海浪、围巾、尾旗是表现性的，不是流体或布料的物理仿真结果",
+    "海鸥、跃鱼是循环与随机的装饰性活动，不是生态模型",
+    "自行车尺寸取自巡航车的常见量级，未逐项对照具体车型"
+   ],
+   "physical_contract": {
+    "model": "controlled-locomotion（简化运动学）",
+    "scope": "米、秒、弧度。速度是权威状态；曲柄角、车轮转角、链条位移、踏频由齿数与轮半径导出；双腿与双翅为解析双骨 IK",
+    "time": "可变步长，单步上限 50 ms；布料固定 1/120 s 子步，每帧最多 5 子步",
+    "limits": [
+     "目标与末端不可触达时腿会被拉直（IK 夹到臂展末端），脚掌仍留在踏板上",
+     "布料在强风下靠近钉点的链节会有可测的残余拉伸（测试阈值 15%）",
+     "暂停时不推进仿真，恢复后从暂停处继续，不补算隐藏期间的帧"
+    ]
+   }
+  }
+ ],
+ "claims_to_visuals": [
+  {
+   "claim": "2 挡、18 km/h 时踏频约 57 rpm",
+   "source": "由 src/core/bike.js 的齿数（44/18）、轮半径 0.345 m 与花鼓比 1.0 推出",
+   "visual": "HUD 的“踏频”读数随速度变化",
+   "verified_by": "tests/core.test.mjs（bike 与 ride 两项）；tools/qa/app_check.py 实测 17.3 km/h 时 54.5 rpm，与同一公式一致"
+  },
+  {
+   "claim": "换到更高挡位，同样的速度踏频更低",
+   "source": "src/core/bike.js 的三速花鼓比 0.75 / 1.0 / 1.33",
+   "visual": "按 G 后踏频读数下降、速度读数不变",
+   "verified_by": "tools/qa/app_check.py：约 17 km/h 时从 2 挡的 54.5 rpm 降到 3 挡的 41.0 rpm，速度不变"
+  },
+  {
+   "claim": "沿路骑一圈约 0.8 公里",
+   "source": "src/core/track.js 的路线弧长（计算值 807.2 m）",
+   "visual": "帮助面板里的小提示",
+   "verified_by": "Node 中读取 track.length"
+  },
+  {
+   "claim": "鹈鹕有长而扁的喙、下垂的喉囊、橙色的蹼足、枕后的冠羽",
+   "source": "Wikimedia Commons 上的白鹈鹕与褐鹈鹕照片，2026-11-24 阅读",
+   "visual": "喙与喉囊的放样、踏板上的蹼足、头盔后沿的冠羽",
+   "verified_by": "仅作者目视对照参考照片与渲染截图，没有量化测量"
+  },
+  {
+   "claim": "这是一辆巡航车：气球胎、后掠车把、弹簧座、长挡泥板",
+   "source": "Wikimedia Commons 上的巡航车照片，2026-11-24 阅读",
+   "visual": "自行车模型",
+   "verified_by": "仅作者目视对照"
+  },
+  {
+   "claim": "下坡或调低目标速度时会滑行，踏板回到水平",
+   "source": "src/core/ride.js 的状态机",
+   "visual": "状态标签变为“滑行”、踏频归零、踏板停在水平位置",
+   "verified_by": "tests/core.test.mjs（ride 两项）；tools/qa/app_check.py 截图 tod_sunset / tod_night 中状态为滑行"
+  }
+ ],
+ "selection_scope": "这些记录只指导了风格方向（赛璐璐色阶、描边、浅主辅光比、场景低饱和）、光照一致性（单一太阳方向、低角度长影、夜间实用光）、水面的“先有水面再加线索”、相机环绕跟随的交互约定，以及传动比同源的思路。全部几何、着色器、世界、音频与界面为自定义。"
+}

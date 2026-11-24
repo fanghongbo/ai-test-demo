@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>鹈鹕骑行 · Pelican Ride</title>
+<meta name="description" content="一只戴头盔的鹈鹕骑着薄荷绿巡航车环岛前行。整座岛、这只鸟和所有声音都由代码在浏览器里即时生成，可离线打开。">
+<meta name="theme-color" content="#9fd3ea">
+<meta property="og:title" content="鹈鹕骑行 · Pelican Ride">
+<meta property="og:description" content="程序化生成的 3D 鹈鹕骑行页面：写实场景与电影画质，可一键切回赛璐璐。踩踏、滑行、车铃、跃鱼，音乐跟着踏频走。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="preview.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239fd3ea'/%3E%3Cpath d='M45 34 6 36c8 9 22 12 39 8z' fill='%23f9cf86' stroke='%2322305a' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M47 28 4 33l2 4 41-1z' fill='%23f28c2c' stroke='%2322305a' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M30 27c0-9 7-15 15-14 8 1 13 8 12 16l-1 7H31z' fill='%23fffaf0' stroke='%2322305a' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M29 22c2-10 12-14 20-10 5 2 8 6 8 11-9-4-19-4-28-1z' fill='%23ee5f4d' stroke='%2322305a' stroke-width='2.5' stroke-linejoin='round'/%3E%3Ccircle cx='47' cy='28' r='2.6' fill='%2322305a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-intro">
+<a class="skip-link" href="#stage">跳到画面</a>
+<main class="stage" id="stage" tabindex="-1">
+  <canvas id="view" role="img" aria-label="鹈鹕骑自行车的三维画面。拖动旋转视角，滚轮缩放，点鹈鹕或海面有互动。"></canvas>
+  <div class="fade" id="fade" aria-hidden="true"></div>
+  <div class="bars" aria-hidden="true"><i class="bar bar--top"></i><i class="bar bar--bottom"></i></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M45 34 6 36c8 9 22 12 39 8z" fill="#f9cf86" stroke="#22305a" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M47 28 4 33l2 4 41-1z" fill="#f28c2c" stroke="#22305a" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M30 27c0-9 7-15 15-14 8 1 13 8 12 16l-1 7H31z" fill="#fffaf0" stroke="#22305a" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M29 22c2-10 12-14 20-10 5 2 8 6 8 11-9-4-19-4-28-1z" fill="#ee5f4d" stroke="#22305a" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="47" cy="28" r="2.6" fill="#22305a"/>
+      </svg>
+      <span class="brand__name">鹈鹕骑行</span>
+    </div>
+    <div class="chip chip--clock" aria-label="当前时刻">
+      <span class="chip__icon" data-icon="sun" data-size="18"></span>
+      <span id="clock" class="chip__value">15:24</span>
+      <span id="todLabel" class="chip__note">白天</span>
+    </div>
+    <nav class="tools" aria-label="场景控制">
+      <button id="btnCam" class="icon-btn" type="button" aria-label="切换镜头，当前：跟拍" title="切换镜头 (C)"><span data-icon="camera"></span></button>
+      <button id="btnTime" class="icon-btn" type="button" aria-label="切换时刻，当前：白天" title="切换时刻 (T)"><span data-icon="sun-horizon"></span></button>
+      <button id="btnStyle" class="icon-btn" type="button" aria-label="切换画风，当前：写实" title="切换画风 (V)"><span data-icon="sparkle"></span></button>
+      <button id="btnMusic" class="icon-btn" type="button" aria-label="音乐：开" aria-pressed="true" title="音乐开关 (N)"><span data-icon="music-notes"></span></button>
+      <button id="btnMute" class="icon-btn" type="button" aria-label="静音" aria-pressed="false" title="静音 (M)"><span data-icon="speaker-high"></span></button>
+      <button id="btnPause" class="icon-btn" type="button" aria-label="暂停" aria-pressed="false" title="暂停 (P)"><span data-icon="pause"></span></button>
+      <button id="btnPhoto" class="icon-btn" type="button" aria-label="隐藏界面，只看画面" title="隐藏界面 (H)"><span data-icon="eye-slash"></span></button>
+      <button id="btnHelp" class="icon-btn" type="button" aria-label="按键与说明" title="按键与说明 (?)"><span data-icon="question"></span></button>
+      <button id="btnSettings" class="icon-btn" type="button" aria-label="设置" aria-expanded="false" title="设置"><span data-icon="gear-six"></span></button>
+    </nav>
+  </header>
+
+  <section class="ride-card" aria-label="骑行数据">
+    <div class="ride-card__main">
+      <div class="hero-number">
+        <span id="speed" class="hero-number__value">0.0</span>
+        <span class="hero-number__unit">km/h</span>
+      </div>
+      <svg class="meter" id="meter" viewBox="0 0 120 120" role="meter" aria-label="速度，满量程 45 公里每小时" aria-valuemin="0" aria-valuemax="45" aria-valuenow="0">
+        <path class="meter__track" d="M22.9 95.1a50 50 0 1 1 74.2 0" />
+        <path class="meter__fill" id="meterFill" d="M22.9 95.1a50 50 0 1 1 74.2 0" />
+      </svg>
+    </div>
+    <dl class="tiles">
+      <div class="tile"><dt>踏频</dt><dd><span id="cadence">0</span><span class="tile__unit">rpm</span></dd></div>
+      <div class="tile"><dt>挡位</dt><dd id="gear">2</dd></div>
+      <div class="tile"><dt>里程</dt><dd><span id="distance">0.00</span><span class="tile__unit">km</span></dd></div>
+    </dl>
+    <p class="status" id="status"><span class="status__dot" aria-hidden="true"></span><span id="statusLabel">停车</span></p>
+    <figure class="spark">
+      <figcaption>近 30 秒速度</figcaption>
+      <svg id="spark" viewBox="0 0 220 44" role="img" aria-label="近 30 秒速度折线，每 2.5 秒一个点"></svg>
+      <div class="spark__tip" id="sparkTip" hidden></div>
+    </figure>
+  </section>
+
+  <p class="hints" id="hints"><kbd>↑</kbd><kbd>↓</kbd> 调速<span aria-hidden="true">·</span><kbd>空格</kbd> 跳跃<span aria-hidden="true">·</span><kbd>B</kbd> 车铃<span aria-hidden="true">·</span><kbd>C</kbd> 镜头<span aria-hidden="true">·</span><kbd>?</kbd> 全部按键</p>
+
+  <div class="touch" id="touch" aria-label="触屏控制">
+    <button class="touch__btn" type="button" data-hold="down" aria-label="减速"><span data-icon="arrow-down"></span></button>
+    <button class="touch__btn" type="button" data-hold="up" aria-label="加速"><span data-icon="arrow-up"></span></button>
+    <button class="touch__btn" type="button" data-act="jump" aria-label="跳跃"><span data-icon="arrows-vertical"></span></button>
+    <button class="touch__btn" type="button" data-act="bell" aria-label="按车铃"><span data-icon="bell"></span></button>
+  </div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <div class="intro" id="intro">
+    <section class="intro__card" role="dialog" aria-modal="true" aria-labelledby="introTitle" aria-describedby="introTagline">
+      <p class="intro__eyebrow">Pelican Ride</p>
+      <h1 class="intro__title" id="introTitle">鹈鹕骑行</h1>
+      <p class="intro__tagline" id="introTagline">
+        <span class="w">戴好头盔，</span><span class="w">沿着环岛路慢慢地骑。</span><br>
+        <span class="w">海风、车铃，</span><span class="w">还有一筐鱼。</span>
+      </p>
+      <ul class="intro__points">
+        <li><span class="intro__dot" aria-hidden="true"></span>这只鹈鹕和整座岛都由代码即时生成，没有任何模型文件</li>
+        <li><span class="intro__dot" aria-hidden="true"></span>踩得越快音乐越快，松开脚踏它就滑行</li>
+        <li><span class="intro__dot" aria-hidden="true"></span>点一点海面，会有鱼跳出来</li>
+      </ul>
+      <div class="intro__actions">
+        <button id="btnStart" class="btn btn--primary" type="button">开始骑行</button>
+        <button id="btnStartMute" class="btn" type="button">静音进入</button>
+      </div>
+      <p class="intro__keys"><kbd>↑</kbd><kbd>↓</kbd> 调速<span aria-hidden="true">·</span><kbd>空格</kbd> 跳跃<span aria-hidden="true">·</span><kbd>B</kbd> 车铃<span aria-hidden="true">·</span><kbd>C</kbd> 镜头</p>
+      <p class="intro__meta">Three.js r180 · 物理天空、材质与后期全部在浏览器里实时计算 · 几何、贴图与声音都由代码生成 · 可离线打开</p>
+    </section>
+  </div>
+
+  <div class="modal" id="help" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+    <section class="modal__card">
+      <header class="modal__head">
+        <h2 class="heading-4" id="helpTitle">按键与说明</h2>
+        <button class="icon-btn" id="btnHelpClose" type="button" aria-label="关闭说明"><span data-icon="x"></span></button>
+      </header>
+      <table class="keys">
+        <caption class="caption-4">键盘</caption>
+        <tbody>
+          <tr><th scope="row"><kbd>↑</kbd> / <kbd>W</kbd></th><td>加速，按住持续加速</td></tr>
+          <tr><th scope="row"><kbd>↓</kbd> / <kbd>S</kbd></th><td>减速，按住刹车</td></tr>
+          <tr><th scope="row"><kbd>空格</kbd></th><td>跳一下</td></tr>
+          <tr><th scope="row"><kbd>B</kbd></th><td>按车铃</td></tr>
+          <tr><th scope="row"><kbd>G</kbd></th><td>换挡，三速花鼓</td></tr>
+          <tr><th scope="row"><kbd>C</kbd> / <kbd>1</kbd>–<kbd>6</kbd></th><td>切换镜头</td></tr>
+          <tr><th scope="row"><kbd>T</kbd> / <kbd>Y</kbd></th><td>切换时刻 / 昼夜流转</td></tr>
+          <tr><th scope="row"><kbd>V</kbd></th><td>切换画风：写实（电影画质）、赛璐璐、排线、线稿</td></tr>
+          <tr><th scope="row"><kbd>K</kbd></th><td>让鹈鹕叫一声</td></tr>
+          <tr><th scope="row"><kbd>N</kbd> / <kbd>M</kbd></th><td>音乐开关 / 静音</td></tr>
+          <tr><th scope="row"><kbd>P</kbd></th><td>暂停，再按继续</td></tr>
+          <tr><th scope="row"><kbd>H</kbd></th><td>隐藏界面，只看画面</td></tr>
+          <tr><th scope="row"><kbd>X</kbd></th><td>显示骨架和踏频圈</td></tr>
+          <tr><th scope="row"><kbd>R</kbd></th><td>回到出发点</td></tr>
+          <tr><th scope="row"><kbd>?</kbd></th><td>打开这份说明</td></tr>
+        </tbody>
+      </table>
+      <table class="keys">
+        <caption class="caption-4">鼠标与触屏</caption>
+        <tbody>
+          <tr><th scope="row">拖动</th><td>环绕视角</td></tr>
+          <tr><th scope="row">滚轮 / 双指</th><td>拉近拉远</td></tr>
+          <tr><th scope="row">点鹈鹕</th><td>它会看着镜头叫一声</td></tr>
+          <tr><th scope="row">点海面</th><td>鱼跃出水面</td></tr>
+        </tbody>
+      </table>
+      <section class="modal__notes">
+        <h3 class="title-2">小提示</h3>
+        <ul class="body-6">
+          <li>海在右手边。沿路骑一圈大约 0.8 公里。</li>
+          <li>上坡会掉速，下坡会自己滑行。换到高挡，同样的速度踏频更低。</li>
+          <li>按车铃会惊飞附近的海鸥。</li>
+        </ul>
+        <h3 class="title-2">制作</h3>
+        <p class="body-6">Three.js r180（MIT）· Phosphor Icons（MIT）· 站酷快乐体（SIL OFL）。全部几何、贴图与声音由代码生成，页面不联网、不收集任何数据。</p>
+      </section>
+    </section>
+  </div>
+
+  <aside class="drawer" id="settings" aria-label="设置" hidden>
+    <header class="drawer__head">
+      <h2 class="heading-5">设置</h2>
+      <button class="icon-btn" id="btnSettingsClose" type="button" aria-label="关闭设置"><span data-icon="x"></span></button>
+    </header>
+    <label class="field"><span class="field__label">目标速度 <output id="outSpeed" class="field__value">15 km/h</output></span>
+      <input id="setSpeed" type="range" min="0" max="45" step="1" value="15"></label>
+    <label class="field"><span class="field__label">描边粗细 <output id="outOutline" class="field__value">1.6 px</output></span>
+      <input id="setOutline" type="range" min="0.6" max="2.6" step="0.1" value="1.6"></label>
+    <label class="field"><span class="field__label">画质</span>
+      <select id="setQuality">
+        <option value="auto">自动</option><option value="2">高</option><option value="1">中</option><option value="0">低</option>
+      </select></label>
+    <label class="field"><span class="field__label">音量 <output id="outVolume" class="field__value">80%</output></span>
+      <input id="setVolume" type="range" min="0" max="100" step="1" value="80"></label>
+    <label class="field field--row"><span class="field__label">音乐跟着踏频</span><input id="setMusic" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+    <label class="field field--row"><span class="field__label">昼夜流转（约 8 分钟一天）</span><input id="setDayCycle" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
+    <label class="field field--row"><span class="field__label">减少动效</span><input id="setReduced" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
+    <section class="film" aria-label="电影画质">
+      <h3 class="title-2">电影画质</h3>
+      <p class="body-6">只在“写实”画风下生效。画质设为“低”时自动关闭景深。</p>
+      <label class="field field--row"><span class="field__label">景深（焦点跟着鹈鹕）</span><input id="setDof" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+      <label class="field field--row"><span class="field__label">辉光</span><input id="setBloom" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+      <label class="field field--row"><span class="field__label">2:1 电影黑边</span><input id="setBars" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+    </section>
+    <details class="sculpt">
+      <summary class="title-2">造型工坊</summary>
+      <p class="body-6">几何是参数化的，拖动就能现捏一只鹈鹕。</p>
+      <label class="field"><span class="field__label">喙长 <output id="outBeak" class="field__value">100%</output></span>
+        <input id="setBeak" type="range" min="0.8" max="1.3" step="0.01" value="1"></label>
+      <label class="field"><span class="field__label">喉囊深度 <output id="outPouch" class="field__value">100%</output></span>
+        <input id="setPouch" type="range" min="0.7" max="1.4" step="0.01" value="1"></label>
+      <label class="field"><span class="field__label">脖子长度 <output id="outNeck" class="field__value">100%</output></span>
+        <input id="setNeck" type="range" min="0.85" max="1.2" step="0.01" value="1"></label>
+      <label class="field"><span class="field__label">体型 <output id="outBody" class="field__value">100%</output></span>
+        <input id="setBody" type="range" min="0.9" max="1.1" step="0.01" value="1"></label>
+      <button id="btnSculptReset" class="btn btn--small" type="button">恢复默认造型</button>
+    </details>
+    <button id="btnReset" class="btn" type="button">回到出发点</button>
+  </aside>
+
+  <div class="banner" id="error" role="alert" hidden></div>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
