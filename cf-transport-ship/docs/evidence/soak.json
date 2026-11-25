@@ -1,0 +1,416 @@
+{
+ "seconds": 60,
+ "avgFps": 31.6,
+ "errors": [],
+ "health": [
+  {
+   "t": 4.1,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    0,
+    0
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 0,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 0,
+    "decals": 0,
+    "scorch": 0,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 67,
+   "textures": 75,
+   "quality": 2
+  },
+  {
+   "t": 9.3,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    0,
+    3
+   ],
+   "bad": 0,
+   "alive": 5,
+   "shots": 4,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 7,
+    "decals": 15,
+    "scorch": 2,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 23,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 2
+  },
+  {
+   "t": 14.3,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    0,
+    3
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 2,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 1,
+    "decals": 17,
+    "scorch": 2,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 2
+  },
+  {
+   "t": 19.0,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    1,
+    5
+   ],
+   "bad": 0,
+   "alive": 6,
+   "shots": 4,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 21,
+    "decals": 25,
+    "scorch": 2,
+    "glow": 2,
+    "vmGlow": 0,
+    "smoke": 10,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 76,
+   "quality": 1
+  },
+  {
+   "t": 24.1,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    4,
+    6
+   ],
+   "bad": 0,
+   "alive": 5,
+   "shots": 7,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 10,
+    "decals": 26,
+    "scorch": 2,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 1,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 29.1,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    4,
+    6
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 9,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 2,
+    "decals": 26,
+    "scorch": 2,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 34.1,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    4,
+    6
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 5,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 2,
+    "decals": 29,
+    "scorch": 2,
+    "glow": 1,
+    "vmGlow": 0,
+    "smoke": 4,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 39.1,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    4,
+    8
+   ],
+   "bad": 0,
+   "alive": 6,
+   "shots": 10,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 6,
+    "decals": 34,
+    "scorch": 2,
+    "glow": 4,
+    "vmGlow": 0,
+    "smoke": 13,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 44.4,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    5,
+    9
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 4,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 13,
+    "decals": 38,
+    "scorch": 2,
+    "glow": 17,
+    "vmGlow": 0,
+    "smoke": 28,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 49.2,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    6,
+    13
+   ],
+   "bad": 0,
+   "alive": 6,
+   "shots": 4,
+   "deaths": 1,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 15,
+    "decals": 50,
+    "scorch": 2,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 54.2,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    8,
+    13
+   ],
+   "bad": 0,
+   "alive": 7,
+   "shots": 6,
+   "deaths": 1,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 16,
+    "decals": 64,
+    "scorch": 3,
+    "glow": 76,
+    "vmGlow": 0,
+    "smoke": 46,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 59.3,
+   "mode": "playing",
+   "phase": "playing",
+   "scores": [
+    8,
+    13
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 15,
+   "deaths": 1,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 0,
+    "decals": 65,
+    "scorch": 3,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 76,
+   "textures": 75,
+   "quality": 0
+  },
+  {
+   "t": 66.0,
+   "mode": "menu",
+   "phase": "lobby",
+   "scores": [
+    0,
+    0
+   ],
+   "bad": 0,
+   "alive": 8,
+   "shots": 0,
+   "deaths": 0,
+   "heapMB": 149.7,
+   "fx": {
+    "tracers": 0,
+    "cases": 0,
+    "decals": 65,
+    "scorch": 3,
+    "glow": 0,
+    "vmGlow": 0,
+    "smoke": 0,
+    "lights": 0
+   },
+   "geometries": 58,
+   "textures": 75,
+   "quality": 0
+  }
+ ],
+ "switches": [
+  [
+   "pause",
+   "paused",
+   "playing",
+   true,
+   true,
+   false,
+   true
+  ],
+  [
+   "resume",
+   "playing",
+   "playing",
+   true,
+   true,
+   true,
+   true
+  ],
+  [
+   "lobby",
+   "menu",
+   "lobby",
+   false,
+   false,
+   true,
+   true
+  ],
+  [
+   "start",
+   "playing",
+   "playing",
+   true,
+   true,
+   true,
+   true
+  ],
+  [
+   "pause2",
+   "paused",
+   "playing",
+   true,
+   true,
+   false,
+   true
+  ],
+  [
+   "lobby2",
+   "menu",
+   "lobby",
+   false,
+   false,
+   true,
+   true
+  ]
+ ],
+ "saturated": false,
+ "grewAfterRelobby": false
+}

@@ -1,0 +1,546 @@
+{
+ "results": [
+  {
+   "name": "开局：启动无错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "开局：直接进入对局",
+   "ok": true,
+   "detail": "playing"
+  },
+  {
+   "name": "开局：出生在保卫者舱里",
+   "ok": true,
+   "detail": "x=-27.424"
+  },
+  {
+   "name": "开局：满血满甲、主武器在手",
+   "ok": true,
+   "detail": "ak47"
+  },
+  {
+   "name": "开局：4 v 4，除玩家外 7 个机器人",
+   "ok": true,
+   "detail": "8"
+  },
+  {
+   "name": "开局：每个机器人都有蒙皮士兵模型",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "开局：两队各 4 人，都活着、各在各家舱里",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "开局：机器人名字不重复",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "界面：战斗界面齐全（雷达、比分、计时、弹药、血量）",
+   "ok": true,
+   "detail": "{'hud': True, 'radar': True, 'gr': '0', 'bl': '0', 'clock': '10:00', 'ammo': '30', 'hp': '100', 'slots': 4, 'cross': True, 'dead': False, 'scope': False, 'board': False, 'menu': False, 'wname': 'AK-47', 'on': '1'}"
+  },
+  {
+   "name": "界面：四个武器槽，当前是 1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "界面：准星显示，阵亡 / 开镜 / 战绩板 / 大厅都收着",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "界面：页面没有横向溢出",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "规模：绘制调用不超过 260 次（含阴影、倒影两遍）",
+   "ok": true,
+   "detail": "{'calls': 179, 'tris': 778887, 'q': 2, 'dpr': 1, 'buildMs': 81, 'texMs': 0}"
+  },
+  {
+   "name": "移动：W 朝前走（朝 +X 时 x 增大）",
+   "ok": true,
+   "detail": "Δx=2.34 m"
+  },
+  {
+   "name": "移动：松开后停下",
+   "ok": true,
+   "detail": "vx=0.01"
+  },
+  {
+   "name": "移动：S 后退",
+   "ok": true,
+   "detail": "Δx=-2.34"
+  },
+  {
+   "name": "移动：D 朝右（朝 +X 时 z 增大）",
+   "ok": true,
+   "detail": "z=2.34"
+  },
+  {
+   "name": "移动：Shift 静步明显更慢",
+   "ok": true,
+   "detail": "静步 Δx=1.17，正常 2.34"
+  },
+  {
+   "name": "下蹲：按住 Ctrl 身高变矮、视点下降",
+   "ok": true,
+   "detail": "h=1.24"
+  },
+  {
+   "name": "下蹲：松开后站起来",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "跳跃：起跳后离地再落回甲板",
+   "ok": true,
+   "detail": "最高 0.94 m"
+  },
+  {
+   "name": "碰撞：朝端墙走不会穿过去",
+   "ok": true,
+   "detail": "x=-31.16（墙在 -31.5）"
+  },
+  {
+   "name": "通路：从出生舱穿过大门洞走上主甲板",
+   "ok": true,
+   "detail": "x=-21.41"
+  },
+  {
+   "name": "视角：鼠标向右转，视角跟着向右",
+   "ok": true,
+   "detail": "Δyaw=0.1920（应为 0.192）"
+  },
+  {
+   "name": "视角：鼠标向下转，镜头向下",
+   "ok": true,
+   "detail": "pitch=-0.576"
+  },
+  {
+   "name": "视角：抬头角度有上限",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "开枪：一发子弹少一颗",
+   "ok": true,
+   "detail": "29"
+  },
+  {
+   "name": "开枪：枪口亮起、灯闪",
+   "ok": true,
+   "detail": "{'tracers': 1, 'cases': 1, 'decals': 2, 'scorch': 0, 'glow': 19, 'vmGlow': 9, 'smoke': 4, 'lights': 1}"
+  },
+  {
+   "name": "开枪：留下曳光",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "name": "开枪：抛壳",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "开枪：子弹在集装箱上留下弹孔",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "name": "特效：枪口焰、火花、硝烟、曳光两秒内全部散尽（不会留在画面里）",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "name": "射速：按住 1 秒，AK-47 打出 10 发",
+   "ok": true,
+   "detail": "剩 20（30 发起）"
+  },
+  {
+   "name": "后坐：连发时准星被抬高",
+   "ok": true,
+   "detail": "pitch 0.000 → 0.072"
+  },
+  {
+   "name": "散布：连发后散布变大",
+   "ok": true,
+   "detail": "1.25 → 1.696"
+  },
+  {
+   "name": "换弹：按 R 进入换弹",
+   "ok": true,
+   "detail": "2.42"
+  },
+  {
+   "name": "换弹：换弹过程中打不出子弹",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "换弹：2.45 秒后弹匣回满、备弹减少",
+   "ok": true,
+   "detail": "30 / 80"
+  },
+  {
+   "name": "换弹：弹药数字跟着界面走",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "瞄准：按住右键进入瞄准，视野推近、散布收紧",
+   "ok": true,
+   "detail": "ads=0.98 fov=58.1 spread=0.222"
+  },
+  {
+   "name": "瞄准：瞄准时准星隐去",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "瞄准：松开右键回到腰射",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "切枪：2 号键切到 usp",
+   "ok": true,
+   "detail": "usp"
+  },
+  {
+   "name": "切枪：3 号键切到 knife",
+   "ok": true,
+   "detail": "knife"
+  },
+  {
+   "name": "切枪：4 号键切到 he",
+   "ok": true,
+   "detail": "he"
+  },
+  {
+   "name": "切枪：1 号键切到 ak47",
+   "ok": true,
+   "detail": "ak47"
+  },
+  {
+   "name": "切枪：Q 回到上一件武器",
+   "ok": true,
+   "detail": "he"
+  },
+  {
+   "name": "切枪：再按 Q 切回来",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "命中：瞄准射击打中前方 6 米的敌人",
+   "ok": true,
+   "detail": "hp=64 [{'type': 'hit', 't': 23.166666666666632, 'part': 'chest', 'killed': False, 'dist': 5.775445699494554}]"
+  },
+  {
+   "name": "命中：有血雾",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "命中：出现命中标记",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "爆头：抬高到头部，一枪击倒",
+   "ok": true,
+   "detail": "[True]"
+  },
+  {
+   "name": "计分：击杀 +1、队伍得分 +1",
+   "ok": true,
+   "detail": "kills=1 scores=[1, 0]"
+  },
+  {
+   "name": "播报：击杀播报里出现这一条（带枪的图标和爆头标记）",
+   "ok": true,
+   "detail": "['我黑潮']"
+  },
+  {
+   "name": "重生：被击倒的机器人 3 秒后在自己舱里重生",
+   "ok": true,
+   "detail": "deaths=1 x=29.6"
+  },
+  {
+   "name": "连杀：不死就接着数，第二个报“双杀”、第三个报“三杀”",
+   "ok": true,
+   "detail": "[2, 3, '双杀！爆头', '爆头三杀！爆头']"
+  },
+  {
+   "name": "军刀：轻划一下掉 68 点血",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "name": "军刀：右键重击直接放倒",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "手雷：掏出手雷，剩 1 颗",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "手雷：左键扔出去，手雷在飞",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "手雷：约 3 秒后爆炸，留下焦痕",
+   "ok": true,
+   "detail": "{'tracers': 0, 'cases': 0, 'decals': 11, 'scorch': 2, 'glow': 34, 'vmGlow': 0, 'smoke': 41, 'lights': 0}"
+  },
+  {
+   "name": "手雷：炸伤附近的敌人",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "手雷：扔完后自动换回枪",
+   "ok": true,
+   "detail": "ak47"
+  },
+  {
+   "name": "受击：被击中后掉血，护甲替你分担一部分",
+   "ok": true,
+   "detail": "hp=83.8 armor=89.9"
+  },
+  {
+   "name": "受击：界面指出受击方向",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "阵亡：血打光后倒下",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "name": "阵亡：显示阵亡提示和重生倒计时",
+   "ok": true,
+   "detail": "黑潮 用 AK-47击倒了你"
+  },
+  {
+   "name": "重生：3 秒后在己方舱里满血复活",
+   "ok": true,
+   "detail": "x=-29.2 hp=100"
+  },
+  {
+   "name": "连杀：阵亡一次以后从头数",
+   "ok": true,
+   "detail": "[1]"
+  },
+  {
+   "name": "机器人：会走动（十秒内有人挪了 5 米以上）",
+   "ok": true,
+   "detail": "最远 38.7 m"
+  },
+  {
+   "name": "机器人：会开枪",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "机器人：打空弹匣后会换弹（弹匣补满 30 发，备弹拿走 30 发）",
+   "ok": true,
+   "detail": "[30, 60, 0, 3]"
+  },
+  {
+   "name": "机器人：没有掉进箱子里或掉出甲板",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "机器人：状态里没有出现 NaN",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "雷达：看见的敌人会被标出来，没看见的不标",
+   "ok": true,
+   "detail": "[58.749999999997996, 0, 0, 0]"
+  },
+  {
+   "name": "雷达：画了地图（不是空的）",
+   "ok": true,
+   "detail": "98580 个像素"
+  },
+  {
+   "name": "战绩板：按住 Tab 弹出，列出场上所有人",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "name": "战绩板：松开 Tab 收起",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "计时：比分牌的倒计时在走",
+   "ok": true,
+   "detail": "09:03"
+  },
+  {
+   "name": "AWM：10 发弹匣、备弹 30",
+   "ok": true,
+   "detail": "{'mode': 'playing', 'phase': 'playing', 'scores': [0, 0], 'left': 599.9166666666667, 'now': 0.08, 'slot': 1, 'weapon': 'awm', 'ammo': 10, 'reserve': 30, 'ads': 0, 'reload': 0, 'alive': True, 'hp': 100, 'armor': 100, 'kills': 0, 'deaths': 0, 'x': -27.424, 'y': 0, 'z': -9.017, 'vx': 0, 'vy': 0, 'vz': "
+  },
+  {
+   "name": "AWM：开一枪后要拉栓，拉栓期间打不出第二发",
+   "ok": true,
+   "detail": "9 → 9"
+  },
+  {
+   "name": "AWM：拉栓完成后可以再打",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "AWM：换弹 3.1 秒",
+   "ok": true,
+   "detail": "10 / 28"
+  },
+  {
+   "name": "开镜：右键第一下开到 4 倍",
+   "ok": true,
+   "detail": "fov=17.02"
+  },
+  {
+   "name": "开镜：第二下开到 8 倍",
+   "ok": true,
+   "detail": "fov=7.51"
+  },
+  {
+   "name": "开镜：第三下收镜",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "潜伏者：出生在船头舱，配 M4A1 和沙鹰",
+   "ok": true,
+   "detail": "m4a1"
+  },
+  {
+   "name": "夜晚：天黑了，舱灯和甲板灯亮起，曝光抬高",
+   "ok": true,
+   "detail": "{'night': 1, 'lamp': 1, 'lights': 12, 'exp': 6.9170096021947876, 'moon': True}"
+  },
+  {
+   "name": "画质：低档关掉环境光遮蔽和海水倒影，阴影贴图变小",
+   "ok": true,
+   "detail": "{'gtao': False, 'refl': 0, 'map': 1024}"
+  },
+  {
+   "name": "画质：回到高档",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "结算：先到目标击杀数的一方获胜，对局结束",
+   "ok": true,
+   "detail": "ended"
+  },
+  {
+   "name": "结算：写着“胜利”和比分",
+   "ok": true,
+   "detail": "0:1"
+  },
+  {
+   "name": "性能：1280×720 高档，单帧不超过 25 ms（本机 RTX 3080）",
+   "ok": true,
+   "detail": "4.12 ms"
+  },
+  {
+   "name": "性能读数",
+   "ok": true,
+   "detail": "4.12 ms / 帧，179 次绘制，778887 个三角形"
+  },
+  {
+   "name": "界面：桌面（1280×720）下雷达、比分、血量、弹药都在画面里",
+   "ok": true,
+   "detail": "{'radar': True, 'score': True, 'status': True, 'ammo': True, 'overflow': False}"
+  },
+  {
+   "name": "界面：小窗口（900×600）下雷达、比分、血量、弹药都在画面里",
+   "ok": true,
+   "detail": "{'radar': True, 'score': True, 'status': True, 'ammo': True, 'overflow': False}"
+  },
+  {
+   "name": "界面：手机竖屏（390×844）下雷达、比分、血量、弹药都在画面里",
+   "ok": true,
+   "detail": "{'radar': True, 'score': True, 'status': True, 'ammo': True, 'overflow': False}"
+  },
+  {
+   "name": "实时：不开冻结时对局按真实时间推进",
+   "ok": true,
+   "detail": "1.57 → 2.30"
+  },
+  {
+   "name": "鼠标：点击画面后锁定鼠标，或者进入拖动视角的退路",
+   "ok": true,
+   "detail": "{'locked': True, 'fallback': False, 'el': True}"
+  },
+  {
+   "name": "暂停：Esc 释放鼠标后暂停，弹出暂停菜单",
+   "ok": true,
+   "detail": "paused"
+  },
+  {
+   "name": "暂停：暂停期间对局时间不走",
+   "ok": true,
+   "detail": "2.82 → 2.82"
+  },
+  {
+   "name": "继续：点“继续战斗”回到对局",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "实时：全程没有页面错误",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "大厅：打开页面先到大厅，战斗界面藏起来",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "大厅：点选阵营、主武器、人数",
+   "ok": true,
+   "detail": "{'team': 1, 'size': 3, 'diff': 'normal', 'primary': 'm4a1', 'target': 50, 'hour': 15.5, 'sens': 1, 'fov': 75, 'invertY': False, 'roll': True, 'quality': 'auto', 'vol': 0.8, 'music': 0.55}"
+  },
+  {
+   "name": "大厅：切到夜晚，背景跟着变暗",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "大厅：开始游戏后按所选设置开局",
+   "ok": true,
+   "detail": "{'mode': 'playing', 'phase': 'playing', 'scores': [0, 0], 'left': 597.3909999999997, 'now': 2.61, 'slot': 1, 'weapon': 'm4a1', 'ammo': 30, 'reserve': 90, 'ads': 0, 'reload': 0, 'alive': True, 'hp': 100, 'armor': 100, 'kills': 0, 'deaths': 0, 'x': 27.443, 'y': 0, 'z': 9.176, 'vx': 0, 'vy': 0, 'vz': 0"
+  },
+  {
+   "name": "大厅：全程没有页面错误",
+   "ok": true,
+   "detail": "[]"
+  }
+ ],
+ "failed": 0,
+ "seconds": 64.5
+}

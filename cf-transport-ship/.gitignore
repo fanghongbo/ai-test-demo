@@ -1,0 +1,24 @@
+# 依赖（运行页面不需要，只有改源码重新打包时需要）
+node_modules/
+
+# QA 产物
+shots/
+app.js.map
+tools/qa/world_lab.bundle.js
+*.log
+
+# 旧的浏览器调试配置
+.edgeprofile/
+
+# 第三方参考照片（造型时只用来观察，不随仓库分发；页面运行也不需要）
+refs/
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

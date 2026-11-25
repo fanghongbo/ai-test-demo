@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>运输船 · Transport Ship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="致敬《穿越火线》运输船地图的网页第一人称射击：Three.js 写实渲染，场景、贴图、音效全部由代码生成。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <div id="hud" class="hud" hidden>
+    <div class="hud__radar"><canvas id="radar" width="360" height="360"></canvas></div>
+    <div class="hud__score">
+      <div class="score-team t-gr"><span>保卫者</span><b id="scoreGR">0</b></div>
+      <div class="score-mid"><span id="clock" class="score-mid__time">10:00</span><span class="score-mid__bar"><i id="barGR"></i></span></div>
+      <div class="score-team t-bl"><b id="scoreBL">0</b><span>潜伏者</span></div>
+    </div>
+    <ul id="feed" class="feed"></ul>
+    <div id="cross" class="cross"><i></i><i></i><i></i><i></i></div>
+    <div id="hitmark" class="hitmark"><i></i><i></i><i></i><i></i></div>
+    <div id="dmgdir" class="dmgdir"></div>
+    <div id="banners" class="banners"></div>
+    <div class="hud__status">
+      <div class="stat"><span>HP</span><i><b id="hpBar"></b></i><em id="hpNum">100</em></div>
+      <div class="stat stat--ac"><span>AC</span><i><b id="acBar"></b></i><em id="acNum">100</em></div>
+    </div>
+    <div class="hud__ammo">
+      <div id="wname" class="ammo__name">AK-47</div>
+      <div class="ammo__num"><b id="ammo">30</b><span id="reserve">/ 90</span></div>
+      <ul id="slots" class="slots"></ul>
+    </div>
+    <div id="hint" class="hint"></div>
+    <div id="scope" class="scope"><div class="scope__mask"></div><i class="scope__h"></i><i class="scope__v"></i><span class="scope__zoom"></span></div>
+    <div id="hurt" class="hurt"></div>
+    <div id="flash" class="flash"></div>
+    <div id="dead" class="dead" hidden>
+      <p class="dead__title">阵亡</p>
+      <p id="deadText" class="dead__text"></p>
+      <p class="dead__count"><b id="deadCount">3</b> 秒后重生</p>
+    </div>
+  </div>
+  <div id="board" class="board" hidden><table id="boardBody"></table></div>
+
+  <div id="menu" class="overlay">
+    <section class="lobby">
+      <header class="lobby__head">
+        <p class="eyebrow">团队竞技 · TEAM DEATHMATCH</p>
+        <h1 class="lobby__title">运输船</h1>
+        <p class="lobby__sub">TRANSPORT SHIP</p>
+        <p class="lobby__note">致敬《穿越火线》经典地图「运输船」的同人练习作品，与官方无关。<br>由 GLM-5.4 开发：场景、贴图、音效全部由代码生成。</p>
+      </header>
+      <div class="lobby__body">
+        <div class="card">
+          <h2 class="card__title">对局</h2>
+          <div class="row"><span class="row__k">阵营</span><div class="seg" data-key="team"><button type="button" data-v="0">保卫者</button><button type="button" data-v="1">潜伏者</button></div></div>
+          <div class="row"><span class="row__k">人数</span><div class="seg" data-key="size"><button type="button" data-v="2">2v2</button><button type="button" data-v="3">3v3</button><button type="button" data-v="4">4v4</button><button type="button" data-v="5">5v5</button><button type="button" data-v="6">6v6</button></div></div>
+          <div class="row"><span class="row__k">难度</span><div class="seg" data-key="diff"><button type="button" data-v="easy">新手</button><button type="button" data-v="normal">普通</button><button type="button" data-v="hard">精英</button></div></div>
+          <div class="row"><span class="row__k">主武器</span><div class="seg" data-key="primary"><button type="button" data-v="ak47">AK-47</button><button type="button" data-v="m4a1">M4A1</button><button type="button" data-v="awm">AWM</button></div></div>
+          <div class="row"><span class="row__k">击杀目标</span><div class="seg" data-key="target"><button type="button" data-v="30">30</button><button type="button" data-v="50">50</button><button type="button" data-v="80">80</button></div></div>
+          <div class="row"><span class="row__k">时刻</span><div class="seg" data-key="hour"><button type="button" data-v="6.9">清晨</button><button type="button" data-v="15.5">白天</button><button type="button" data-v="18.25">黄昏</button><button type="button" data-v="22">夜晚</button></div></div>
+        </div>
+        <div class="card">
+          <h2 class="card__title">操作与设置</h2>
+          <dl class="keys">
+            <dt>W A S D</dt><dd>移动</dd><dt>Shift</dt><dd>静步</dd><dt>Ctrl / C</dt><dd>下蹲</dd><dt>空格</dt><dd>跳跃</dd>
+            <dt>左键</dt><dd>开火</dd><dt>右键</dt><dd>瞄准 / 开镜 / 重刀</dd><dt>R</dt><dd>换弹</dd><dt>1 – 4、Q、滚轮</dt><dd>换武器</dd>
+            <dt>G</dt><dd>掏出手雷（左键投掷）</dd><dt>Tab</dt><dd>战绩板</dd><dt>Esc</dt><dd>暂停</dd>
+          </dl>
+          <div class="row row--set"><span class="row__k">灵敏度</span><label class="slider"><input type="range" min="0.2" max="3" step="0.05" data-key="sens"><output></output></label></div>
+          <div class="row row--set"><span class="row__k">视野</span><label class="slider"><input type="range" min="65" max="100" step="1" data-key="fov"><output></output></label></div>
+          <div class="row row--set"><span class="row__k">画质</span><div class="seg" data-key="quality"><button type="button" data-v="auto">自动</button><button type="button" data-v="2">高</button><button type="button" data-v="1">中</button><button type="button" data-v="0">低</button></div></div>
+          <div class="row row--set"><span class="row__k">音量</span><label class="slider"><input type="range" min="0" max="1" step="0.05" data-key="vol"><output></output></label></div>
+          <div class="row row--set"><span class="row__k">音乐</span><label class="slider"><input type="range" min="0" max="1" step="0.05" data-key="music"><output></output></label></div>
+          <div class="row row--set"><span class="row__k">其他</span><label class="check"><input type="checkbox" data-key="invertY">Y 轴反转</label><label class="check"><input type="checkbox" data-key="roll">船体摇摆</label></div>
+        </div>
+      </div>
+      <footer class="lobby__foot">
+        <button id="btnStart" class="btn btn--primary" type="button">开始游戏</button>
+        <span class="lobby__tip">需要键盘和鼠标。开始后鼠标会被锁定，按 Esc 释放。</span>
+      </footer>
+    </section>
+  </div>
+
+  <div id="pause" class="overlay overlay--dim" hidden>
+    <section class="panel">
+      <p class="eyebrow">PAUSED</p>
+      <h2 class="panel__title">已暂停</h2>
+      <p id="pauseScore" class="panel__sub"></p>
+      <div class="panel__actions"><button id="btnResume" class="btn btn--primary" type="button">继续战斗</button><button id="btnLobby" class="btn" type="button">回到大厅</button></div>
+      <p class="panel__tip">按 Esc 或点“继续战斗”回到游戏</p>
+    </section>
+  </div>
+
+  <div id="result" class="overlay overlay--dim" hidden>
+    <section class="panel panel--wide">
+      <p class="eyebrow">对局结束</p>
+      <h2 id="resultTitle" class="panel__title">胜利</h2>
+      <p id="resultScore" class="panel__score"></p>
+      <p id="resultMvp" class="panel__sub"></p>
+      <table id="resultTable" class="table"></table>
+      <div class="panel__actions"><button id="btnRestart" class="btn btn--primary" type="button">再来一局</button><button id="btnLobby2" class="btn" type="button">回到大厅</button></div>
+    </section>
+  </div>
+
+  <div id="load">
+    <div class="load__title">运输船</div>
+    <div class="load__sub">TRANSPORT SHIP</div>
+    <div class="load__bar"><i id="loadBar"></i></div>
+    <div id="loadText" class="load__text">正在生成贴图…</div>
+  </div>
+  <div id="error" class="banner" role="alert" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
