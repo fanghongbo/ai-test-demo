@@ -74,7 +74,7 @@ grow = health[-1]['geometries'] > max(h['geometries'] for h in health[:-1]) or h
 out = dict(seconds=a.seconds, avgFps=round(fps, 1), errors=errors, health=health, switches=switches, saturated=sat, grewAfterRelobby=grow)
 (ROOT / 'docs' / 'evidence').mkdir(parents=True, exist_ok=True)
 (ROOT / 'docs' / 'evidence' / 'soak.json').write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
-print(f'{a.seconds} 秒，平均 {fps:.0f} 帧/秒（无头浏览器自己把帧率限在 30 左右），报错 {len(errors)} 个')
+print(f'{a.seconds} 秒，平均 {fps:.0f} 帧/秒（帧率的上限来自这台机器当前的显示器刷新率），报错 {len(errors)} 个')
 for h in health:
     f = h['fx']
     print(f"  t={h['t']:>5} s  {h['mode']}/{h['phase']}  比分 {h['scores']}  活着 {h['alive']}  异常 {h['bad']}  堆 {h['heapMB']} MB  几何 {h['geometries']}  贴图 {h['textures']}  "
