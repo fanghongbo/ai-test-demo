@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>QQ飞车 · 十一城 — 3D 漂移竞速</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="致敬《QQ飞车》经典赛道「十一城」的网页 3D 漂移竞速：Three.js 写实渲染，场景、贴图、音效全部由代码生成。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <!-- 电影镜头的黑边、撞击时的红闪、转场的黑场 -->
+  <div id="cineTop" class="cine-bar"></div>
+  <div id="cineBottom" class="cine-bar"></div>
+  <div id="hurt"></div>
+  <div id="fade"></div>
+
+  <!-- ———— 比赛 HUD ———— -->
+  <div id="hud" class="screen" hidden>
+    <div class="hud-rank">
+      <div class="rank-line"><span id="rankNum">1</span><span id="rankSuf" class="rank-suf">st</span><span id="rankOf">/6</span></div>
+      <div class="rank-sub"><span class="lab">圈数</span><b id="lapNow">1</b>/<span id="lapTotal">3</span></div>
+      <div class="times">
+        <div><span class="lab">单圈</span><b id="lapTime">0:00.00</b></div>
+        <div><span class="lab">总时</span><b id="raceTime">0:00.00</b></div>
+        <div><span class="lab">最快</span><b id="bestTime">--:--.--</b></div>
+      </div>
+    </div>
+
+    <div class="hud-map">
+      <canvas id="minimap" width="232" height="212"></canvas>
+      <div id="zoneName">跨海大桥</div>
+    </div>
+
+    <div class="hud-gauge">
+      <canvas id="gauge" width="240" height="240"></canvas>
+    </div>
+
+    <div class="hud-nitro">
+      <div class="bottles">
+        <div class="bottle" data-i="0"><i></i></div>
+        <div class="bottle" data-i="1"><i></i></div>
+      </div>
+      <div class="nitro-key"><kbd>Ctrl</kbd>氮气</div>
+    </div>
+
+    <div id="items" class="hud-items" hidden>
+      <div class="slot" data-i="0"></div>
+      <div class="slot" data-i="1"></div>
+      <div class="keys"><span><kbd>Ctrl</kbd>使用</span><span><kbd>Alt</kbd>切换</span></div>
+    </div>
+
+    <div id="countdown"></div>
+    <div id="centerMsg"></div>
+    <div id="popups"></div>
+    <div id="hints"></div>
+    <div id="standings" hidden></div>
+  </div>
+
+  <div id="tags"></div>
+
+  <!-- ———— 大厅 ———— -->
+  <div id="menu" class="screen" hidden>
+    <header class="brand">
+      <h1>QQ飞车<i>十一城</i></h1>
+      <p>SPEED DRIFTERS · 网页 3D 版</p>
+    </header>
+
+    <section class="panel setup" id="setup"></section>
+
+    <section class="panel garage">
+      <button id="carPrev" class="arrow" aria-label="上一辆车">‹</button>
+      <div class="car-info">
+        <div class="car-head"><span id="carCls" class="cls">A</span><h2 id="carName">雷诺</h2><div id="carTags" class="tags"></div></div>
+        <p id="carDesc"></p>
+        <dl id="carSpecs" class="specs"></dl>
+      </div>
+      <canvas id="radar" width="260" height="150"></canvas>
+      <button id="carNext" class="arrow" aria-label="下一辆车">›</button>
+    </section>
+
+    <div class="menu-actions">
+      <div id="bestRecord" class="record"></div>
+      <button id="startBtn" class="btn primary">开始比赛<kbd>Enter</kbd></button>
+      <button id="helpBtn" class="btn">操作说明</button>
+    </div>
+    <footer class="credit">本项目由 GLM-5.4 开发 · 场景、贴图、音效均由代码实时生成</footer>
+  </div>
+
+  <!-- ———— 结算 ———— -->
+  <div id="results" class="screen overlay" hidden>
+    <div class="panel result">
+      <h2 id="resTitle">比赛结束</h2>
+      <div id="resPlace">第 1 名</div>
+      <table class="board"><thead><tr><th>名次</th><th>车手</th><th>赛车</th><th>总成绩</th><th>最快圈</th></tr></thead><tbody id="resBoard"></tbody></table>
+      <div id="resStats" class="stats"></div>
+      <div class="row">
+        <button id="againBtn" class="btn primary">再来一局<kbd>Enter</kbd></button>
+        <button id="lobbyBtn" class="btn">返回大厅<kbd>Esc</kbd></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ———— 暂停 ———— -->
+  <div id="pause" class="screen overlay" hidden>
+    <div class="panel">
+      <h2>暂停</h2>
+      <div class="col">
+        <button id="resumeBtn" class="btn primary">继续比赛<kbd>Esc</kbd></button>
+        <button id="restartBtn" class="btn">重新开始</button>
+        <button id="pauseHelpBtn" class="btn">操作说明</button>
+        <button id="muteBtn" class="btn">声音：开</button>
+        <button id="pauseLobbyBtn" class="btn">返回大厅</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ———— 操作说明 ———— -->
+  <div id="help" class="screen overlay" hidden>
+    <div class="panel help">
+      <h2>操作说明<em>（QQ飞车经典键位）</em></h2>
+      <div class="help-cols">
+        <table id="keyTable"></table>
+        <div class="tips">
+          <h3>漂移喷射</h3>
+          <ul>
+            <li><b>小喷</b>：漂移结束松开 Shift 后，马上再按一次 ↑</li>
+            <li><b>双喷</b>：小喷之后立刻接氮气（Ctrl）</li>
+            <li><b>WCW</b>：氮气还在喷的时候完成漂移并小喷</li>
+            <li><b>断位双喷</b>：直线上轻点方向 + Shift 起漂，马上松开接小喷和氮气</li>
+            <li><b>甩尾漂移</b>：先按住 Shift，再按方向键</li>
+            <li><b>侧身漂移</b>：漂移中按反方向键</li>
+            <li><b>完美起步</b>：倒计时快结束时按下 ↑</li>
+            <li>漂移会<b>集气</b>，攒满一格得到一瓶氮气，最多带两瓶</li>
+          </ul>
+          <h3>道具赛</h3>
+          <ul>
+            <li>开过赛道上的问号方块拿到道具，最多带两件，<b>Alt</b> 切换，<b>Ctrl</b> 使用</li>
+            <li><b>导弹</b>锁定前一辆车，<b>水炸弹</b>往前扔炸一片，<b>香蕉皮</b>丢在身后</li>
+            <li><b>磁铁</b>吸向前车，<b>天使</b>无敌 6 秒，<b>氮气</b>立刻加速</li>
+            <li>跑在前面的更容易拿到防守型道具，落在后面的更容易拿到进攻型道具</li>
+          </ul>
+        </div>
+      </div>
+      <button id="helpClose" class="btn primary">知道了<kbd>Esc</kbd></button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <div id="load">
+    <div class="load__title">十一城</div>
+    <div class="load__sub">SPEED DRIFTERS · ELEVENTH CITY</div>
+    <div class="load__bar"><i id="loadBar"></i></div>
+    <div id="loadText" class="load__text">正在加载…</div>
+  </div>
+  <div id="error" class="banner" role="alert" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

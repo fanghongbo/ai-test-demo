@@ -1,0 +1,15 @@
+$ python -X utf8 tools/qa/audit_geo.py
+# 2026-11-27 00:04，10 秒，通过
+
+BLACK (renders black): 0
+IGNORED (tint lost): 10
+   [1, 9000] Scene/landmarks/lm.5 [MeshStandardMaterial]
+   [1, 6720] Scene/landmarks/canopyGrid [MeshStandardMaterial]
+   [1, 6048] Scene/city/city.4 [MeshStandardMaterial]
+   [56, 3360] Scene/props/flags [MeshStandardMaterial]
+   [1, 144] Scene/landmarks/lm.14 [MeshStandardMaterial]
+   [1, 72] Scene/landmarks/lmfx.3 [MeshBasicMaterial]
+   [1, 18] Scene/landmarks/lmfx.1 [MeshBasicMaterial]
+   [1, 12] Scene/landmarks/lmfx.0 [MeshStandardMaterial]
+   [1, 12] Scene/landmarks/lmfx.4 [MeshStandardMaterial]
+   [1, 6] Scene/props/propsFx.0 [MeshStandardMaterial]

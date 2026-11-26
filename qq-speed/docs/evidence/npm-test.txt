@@ -1,0 +1,114 @@
+$ npm test
+# 2026-11-26 23:59，2 秒，通过
+
+> qq-speed-eleventh-city@2.0.0 test
+> node --test tests/ && node tools/qa/track_check.mjs
+
+✔ sampleHour() hits every key frame exactly (0.7254ms)
+✔ sampleHour() is continuous across key frames (0.2906ms)
+✔ night and lamps switch around sunset (0.1435ms)
+✔ the lobby's times of day are distinct and ordered from morning to night (0.3886ms)
+✔ sunVector(): azimuth 0 points to +Z, 90 to +X, and the vector is a unit length (0.1702ms)
+✔ full throttle accelerates, coasting slows down, the brake stops and reverses the car (7.1804ms)
+✔ every car: plain top speed is reached but not exceeded (5.571ms)
+✔ the car can never exceed top speed + nitro + mini boost (4.8661ms)
+✔ drift: hold Shift + direction, release, press up again = 小喷 (0.8059ms)
+✔ a drift that is too short gives no mini boost (0.2111ms)
+✔ 小喷 followed by nitro = 双喷; a short drift then nitro = 断位双喷 (0.8061ms)
+✔ 断位双喷 stays possible at racing speed: a drift of 0.5 s still earns its mini boost (3.8888ms)
+✔ nitro first, then a drift ending in a mini boost = WCW (0.7141ms)
+✔ Shift held before the direction = 甩尾; the opposite direction during a drift = 侧身 (0.6204ms)
+✔ a long drift fills the gas gauge into a bottle, two at most (7.8423ms)
+✔ a nitro bottle raises the speed above the plain top speed (1.0252ms)
+✔ a drift turns far tighter than grip driving (0.7091ms)
+✔ walls: the car never leaves the road, however hard it is pushed (8.362ms)
+✔ R puts the car back on the road, facing the right way, standing still (3.4492ms)
+✔ mashing random keys for half a minute never breaks the numbers or the speed limit (67.0418ms)
+✔ item mode: drifting gives no mini boost and no gas, and a spin ignores the keys (0.85ms)
+✔ countdown: nothing moves until GO; pressing up just before GO is a perfect start (2.3717ms)
+✔ speed mode: six cars, two laps, everyone finishes with sane lap times and unique ranks (297.4659ms)
+✔ all five cars can be driven to the end by the AI (291.4767ms)
+✔ restart puts everyone back on the grid with clean stats (12.3824ms)
+✔ 练习 (no rivals): one car on the grid, first of one (8.5371ms)
+✔ item mode: boxes are picked up, items are used, cars get hit, and nobody gets mini boosts (180.6467ms)
+✔ each item does what it says (0.4763ms)
+✔ a missile flies along the road to the car ahead and spins it; an angel blocks it (2.0208ms)
+✔ a missile with nobody ahead runs out of road and misses (1.7704ms)
+✔ a banana peel spins the next car that drives over it, but not the one that dropped it straight away (0.3321ms)
+✔ a water bomb flies forward, splashes down and spins everyone nearby (2.0999ms)
+✔ item boxes lie on the road, in rows far enough apart to matter (0.2354ms)
+✔ the lap is a closed loop of evenly spaced samples (0.7036ms)
+✔ the road never kinks: the amount of turning changes gradually from one sample to the next (0.6056ms)
+✔ nearest() finds the stretch of road a point was taken from (4.2187ms)
+✔ the drivable width is sane all the way round and the wall is where the physics expects it (0.4582ms)
+✔ every sample knows its zone, and every zone has a Chinese name (0.2411ms)
+✔ the sea bridge is over water and the rest of the lap is over land (0.9464ms)
+✔ the racing line stays on the road and its speed profile is finite and positive (0.8012ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1042.6226
+samples 1168  ds 1.501 m  lap 1752.6 m  scale 3 m/px
+half-width  min 5.80  max 8.60 m
+tightest radius 8.17 m at s=359 (laneIn)
+closure: last→first 1.501 m (should ≈ ds 1.501)
+corners: 23
+  s   114–  126  r≥  9.9 m  turn   56°  hw 8.1  link
+  s   135–  140  r≥ 18.6 m  turn  -14°  hw 7.9  link
+  s   159–  170  r≥ 10.0 m  turn   47°  hw 7.4  link
+  s   204–  221  r≥ 10.2 m  turn  -76°  hw 8.0  link
+  s   255–  296  r≥ 12.3 m  turn  166°  hw 7.6  canal
+  s   333–  350  r≥  9.0 m  turn  -89°  hw 7.0  westRoad
+  s   353–  363  r≥  8.2 m  turn  -60°  hw 6.3  hookC
+  s   417–  449  r≥  9.2 m  turn  179°  hw 5.8  laneIn
+  s   524–  561  r≥ 11.4 m  turn -179°  hw 6.0  laneOut
+  s   603–  609  r≥ 13.4 m  turn  -23°  hw 6.1  laneV
+  s   612–  647  r≥ 10.8 m  turn  175°  hw 6.2  uTop
+  s   695–  714  r≥  8.4 m  turn -116°  hw 6.0  topBand
+  s   803–  840  r≥ 11.1 m  turn  179°  hw 6.4  topBand
+  s   963–  975  r≥  9.0 m  turn  -61°  hw 6.4  legL2
+  s   981– 1032  r≥  9.0 m  turn   90°  hw 6.0  legL2
+  s  1064– 1092  r≥  8.7 m  turn -165°  hw 5.8  uW1down
+  s  1161– 1188  r≥  8.4 m  turn  165°  hw 6.0  diagNE
+  s  1251– 1269  r≥  9.0 m  turn -100°  hw 6.4  uN
+  s  1326– 1364  r≥ 11.4 m  turn  179°  hw 6.9  uE1
+  s  1415– 1448  r≥  9.8 m  turn -179°  hw 6.3  fallW
+  s  1483– 1516  r≥  9.8 m  turn  179°  hw 6.4  riseE2
+  s  1555– 1610  r≥  9.2 m  turn  -78°  hw 6.8  uHook
+  s  1667– 1687  r≥ 10.5 m  turn   89°  hw 8.5  final
+min gap between non-adjacent sections: 5.38 m  at s=1160 (diagNE) ↔ s=1190 (uN)
+nearest(): worst along-track error 0.53 m, bad 0
+nearest() global: bad 0
+start line at s=0.0 m, idx 0, heading 180.0°
+  zone start       132 samples    198 m  hw 8.4–8.5
+  zone link         61 samples     92 m  hw 7.4–8.6
+  zone canal        34 samples     51 m  hw 7.7–8.0
+  zone westRoad     52 samples     78 m  hw 7.3–7.8
+  zone hookC        13 samples     20 m  hw 6.6–7.2
+  zone laneIn       53 samples     80 m  hw 5.8–6.5
+  zone laneOut      73 samples    110 m  hw 5.8–6.0
+  zone laneV        45 samples     68 m  hw 6.0–6.2
+  zone uTop         12 samples     18 m  hw 6.2–6.2
+  zone topBand     117 samples    176 m  hw 6.0–6.2
+  zone legL1        12 samples     18 m  hw 6.2–6.4
+  zone legL2       107 samples    161 m  hw 6.4–6.4
+  zone crossRoad    10 samples     15 m  hw 6.2–6.4
+  zone uW1          11 samples     17 m  hw 6.0–6.2
+  zone uW1down      34 samples     51 m  hw 5.9–6.0
+  zone uV1          38 samples     57 m  hw 5.8–5.9
+  zone diagNE       27 samples     41 m  hw 5.9–6.0
+  zone uN           60 samples     90 m  hw 6.0–6.2
+  zone colS         49 samples     74 m  hw 6.3–6.6
+  zone uE1          13 samples     20 m  hw 6.7–7.0
+  zone fallW        47 samples     71 m  hw 6.5–6.9
+  zone uMid         11 samples     17 m  hw 6.2–6.5
+  zone riseE2       34 samples     51 m  hw 6.3–6.4
+  zone uE2          11 samples     17 m  hw 6.4–6.5
+  zone fallW2       36 samples     54 m  hw 6.3–6.4
+  zone uHook        14 samples     21 m  hw 6.2–6.5
+  zone final        62 samples     93 m  hw 6.5–8.3
+TRACK OK

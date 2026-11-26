@@ -1,0 +1,15 @@
+$ python -X utf8 tools/qa/pixel_check.py --sec 14
+# 2026-11-27 00:03，75 秒，通过
+
+control                  扫了  66 帧，坏的   0 帧，     0 像素
+  shock ring               扫了  66 帧，坏的   0 帧，     0 像素
+  angel shield             扫了  66 帧，坏的   0 帧，     0 像素
+  magnet beam              扫了  66 帧，坏的   0 帧，     0 像素
+  nitro flame              扫了  66 帧，坏的   0 帧，     0 像素
+  banana                   扫了  66 帧，坏的   0 帧，     0 像素
+  missile                  扫了  66 帧，坏的   0 帧，     0 像素
+  water bomb               扫了  67 帧，坏的   0 帧，     0 像素
+  missile hit + shock      扫了  67 帧，坏的   0 帧，     0 像素
+  bomb splash + shock      扫了  67 帧，坏的   0 帧，     0 像素
+  everything at once       扫了 384 帧，坏的   0 帧，     0 像素（道具用出 33 次）
+PIXEL OK（没有非有限的像素，材质数值都是有限数）

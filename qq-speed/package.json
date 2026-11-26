@@ -1,0 +1,22 @@
+{
+  "name": "qq-speed-eleventh-city",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "QQ飞车 · 十一城 — 网页 3D 漂移竞速（Three.js r180 写实渲染，零外部资源）",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "prod": "node build.mjs --prod",
+    "dev": "node tools/serve.mjs 5273",
+    "test": "node --test tests/ && node tools/qa/track_check.mjs",
+    "track": "node tools/qa/track_check.mjs",
+    "serve": "node tools/serve.mjs 5273"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

@@ -1,0 +1,10 @@
+$ python -X utf8 tools/qa/glsl.py
+# 2026-11-27 00:04，11 秒，通过
+
+ready=True  logs=6  errors/warnings=0
+[debug] [nova] boot 103ms
+[debug] [nova] stage 392ms
+[debug] [nova] textures 727ms
+[debug] [nova] track 1047ms
+[debug] [nova] world 1203ms
+[debug] [nova] race 4356ms

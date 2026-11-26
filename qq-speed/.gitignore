@@ -1,0 +1,23 @@
+# 依赖（运行页面不需要，只有改源码重新打包时需要）
+node_modules/
+
+# QA 产物
+shots/
+app.js.map
+tools/qa/plan.json
+tools/qa/plan_map.png
+tools/qa/track.json
+tools/qa/track_overlay.jpg
+*.log
+__pycache__/
+*.pyc
+
+# 开发时核对赛道走向用的官方小地图叠图，以及前期查资料的一次性脚本（都不属于项目，页面运行也不需要）
+refs/
+tools/research/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

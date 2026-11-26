@@ -1,0 +1,9 @@
+$ python -X utf8 tools/qa/perf.py
+# 2026-11-27 00:07，172 秒，通过
+
+1600x900 q0 15.50h  lobby   2.40 ms  race   3.08 ms  (326 calls, 1.13M tris, dpr 1)
+   1600x900 q1 15.50h  lobby   5.94 ms  race   4.75 ms  (438 calls, 1.31M tris, dpr 1)
+   1600x900 q2 15.50h  lobby   6.11 ms  race   5.57 ms  (438 calls, 1.31M tris, dpr 1)
+  1920x1080 q0 15.50h  lobby   2.57 ms  race   2.94 ms  (326 calls, 1.13M tris, dpr 1)
+  1920x1080 q1 15.50h  lobby   6.53 ms  race   5.61 ms  (438 calls, 1.31M tris, dpr 1)
+  1920x1080 q2 15.50h  lobby   6.81 ms  race   5.71 ms  (438 calls, 1.31M tris, dpr 1)

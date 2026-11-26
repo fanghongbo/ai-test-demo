@@ -1,0 +1,10 @@
+$ python -X utf8 tools/qa/game_check.py menu --out shots/evidence/menu
+# 2026-11-26 23:59，19 秒，通过
+
+[10_menu] t=0.0s state=menu v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [11_menu_car2] t=0.0s state=menu v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [12_menu_car0] t=0.0s state=menu v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [13_help] t=0.0s state=menu v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [14_intro_a] t=0.0s state=intro v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [15_intro_b] t=0.0s state=intro v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [16_countdown] t=0.0s state=countdown v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00

@@ -1,0 +1,9 @@
+$ python -X utf8 tools/qa/audio_check.py
+# 2026-11-27 00:04，12 秒，通过
+
+before any gesture: {"ready": false, "muted": false}
+after a click: {"ready": true, "errors": [], "bgm": ["疾风 · 十一城", "夜航", "晴空极速", "疾风 · 十一城", "晴空极速"], "muted": true, "unmuted": true}
+M key toggles the sound setting: [False, True, '声音：关']
+M again: [True, False, '声音：开']
+console errors: none
+AUDIO OK

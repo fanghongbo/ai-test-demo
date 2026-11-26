@@ -1,0 +1,26 @@
+$ python -X utf8 tools/qa/game_check.py ai --sec 110 --laps 1 --out shots/evidence/ai
+# 2026-11-27 00:01，88 秒，通过
+
+[ai_01] t=3.6s state=race v=122km/h rank=4 lap=1 e=0.7 drift=False N2O=0 gas=0.00
+  [ai_02] t=7.0s state=race v=99km/h rank=4 lap=1 e=-3.2 drift=False N2O=0 gas=0.06
+  [ai_03] t=10.3s state=race v=80km/h rank=4 lap=1 e=1.4 drift=False N2O=0 gas=0.15
+  [ai_04] t=13.7s state=race v=86km/h rank=4 lap=1 e=-2.5 drift=False N2O=0 gas=0.56
+  [ai_05] t=17.1s state=race v=102km/h rank=4 lap=1 e=2.6 drift=False N2O=0 gas=0.87
+  [ai_06] t=20.5s state=race v=98km/h rank=3 lap=1 e=-3.3 drift=False N2O=1 gas=0.15
+  [ai_07] t=23.9s state=race v=76km/h rank=2 lap=1 e=0.2 drift=False N2O=1 gas=0.48
+  [ai_08] t=27.3s state=race v=70km/h rank=2 lap=1 e=2.0 drift=False N2O=1 gas=0.69
+  [ai_09] t=30.6s state=race v=80km/h rank=2 lap=1 e=5.9 drift=False N2O=0 gas=0.83
+  [ai_10] t=34.0s state=race v=79km/h rank=4 lap=1 e=2.3 drift=True N2O=1 gas=0.02
+  [ai_11] t=37.4s state=race v=210km/h rank=3 lap=1 e=4.0 drift=True N2O=0 gas=0.21
+  [ai_12] t=40.8s state=race v=69km/h rank=3 lap=1 e=-4.2 drift=False N2O=0 gas=0.55
+  [ai_13] t=44.2s state=race v=63km/h rank=4 lap=1 e=-1.1 drift=True N2O=0 gas=0.77
+  [ai_14] t=47.6s state=race v=63km/h rank=4 lap=1 e=0.3 drift=True N2O=0 gas=0.90
+  [ai_15] t=50.9s state=race v=64km/h rank=3 lap=1 e=1.1 drift=True N2O=1 gas=0.05
+  [ai_16] t=54.3s state=race v=75km/h rank=3 lap=1 e=-2.5 drift=True N2O=1 gas=0.23
+  [ai_17] t=57.7s state=race v=65km/h rank=4 lap=1 e=-0.5 drift=True N2O=1 gas=0.54
+  [ai_18] t=61.1s state=race v=69km/h rank=4 lap=1 e=-1.1 drift=True N2O=1 gas=0.90
+  [ai_19] t=64.4s state=race v=79km/h rank=4 lap=1 e=-0.7 drift=True N2O=2 gas=0.32
+  [ai_20] t=67.8s state=race v=112km/h rank=4 lap=1 e=-3.4 drift=False N2O=2 gas=0.54
+  [ai_21] t=71.2s state=race v=182km/h rank=4 lap=1 e=3.4 drift=False N2O=1 gas=0.63
+  [81_results] t=72.7s state=results v=225km/h rank=4 lap=2 e=0.7 drift=False N2O=1 gas=0.63
+  结算: [[6, "风之子", "针尖", "-", [], 4, 15, 1, 2], [3, "小橘子", "流火", "71.2", ["71.2"], 10, 18, 1, 2], [5, "night", "雷电", "72.1", ["72.1"], 3, 16, 1, 2], [1, "阿光", "雷诺", "70.5", ["70.5"], 6, 17, 1, 2], [4, "你", "雷诺", "71.3", ["71.3"], 4, 16, 1, 2], [2, "零式", "针尖", "71.1", ["71.1"], 9, 17, 1, 2]]

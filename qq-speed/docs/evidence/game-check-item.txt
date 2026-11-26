@@ -1,0 +1,39 @@
+$ python -X utf8 tools/qa/game_check.py item --sec 75 --out shots/evidence/item
+# 2026-11-27 00:02，90 秒，通过
+
+道具赛： ['item', True, 26]
+  [it_00_boxes] t=1.6s state=race v=62km/h rank=5 lap=0 e=-0.4 drift=False N2O=0 gas=0.00
+  [it_shield_1] t=1.9s state=race v=70km/h rank=5 lap=0 e=-0.0 drift=False N2O=0 gas=0.00
+  [it_magnet_1] t=2.0s state=race v=75km/h rank=5 lap=0 e=0.1 drift=False N2O=0 gas=0.00
+  [it_shield_2] t=2.3s state=race v=84km/h rank=5 lap=1 e=0.5 drift=False N2O=0 gas=0.00
+  [it_magnet_2] t=2.4s state=race v=87km/h rank=6 lap=1 e=0.6 drift=False N2O=0 gas=0.00
+  [it_bomb_1] t=3.6s state=race v=91km/h rank=5 lap=1 e=-1.3 drift=False N2O=0 gas=0.00
+  [it_bomb_2] t=3.7s state=race v=97km/h rank=5 lap=1 e=-0.9 drift=False N2O=0 gas=0.00
+  [it_01] t=4.8s state=race v=127km/h rank=5 lap=1 e=0.7 drift=False N2O=0 gas=0.00
+  [it_banana_1] t=5.6s state=race v=110km/h rank=4 lap=1 e=0.4 drift=False N2O=0 gas=0.00
+  [it_missile_1] t=7.5s state=race v=93km/h rank=4 lap=1 e=-2.7 drift=False N2O=0 gas=0.00
+  [it_missile_2] t=7.6s state=race v=99km/h rank=4 lap=1 e=-2.0 drift=False N2O=0 gas=0.00
+  [it_missile_3] t=7.8s state=race v=92km/h rank=4 lap=1 e=-1.2 drift=False N2O=0 gas=0.00
+  [it_02] t=8.1s state=race v=80km/h rank=4 lap=1 e=-0.2 drift=False N2O=0 gas=0.00
+  [it_banana_2] t=11.9s state=race v=91km/h rank=3 lap=1 e=2.2 drift=False N2O=0 gas=0.00
+  [it_03] t=12.1s state=race v=80km/h rank=3 lap=1 e=1.5 drift=False N2O=0 gas=0.00
+  [it_04] t=16.2s state=race v=73km/h rank=3 lap=1 e=-0.0 drift=True N2O=0 gas=0.00
+  [it_05] t=20.3s state=race v=65km/h rank=2 lap=1 e=1.0 drift=False N2O=0 gas=0.00
+  [it_06] t=24.3s state=race v=76km/h rank=2 lap=1 e=-0.6 drift=True N2O=0 gas=0.00
+  [it_07] t=28.4s state=race v=74km/h rank=2 lap=1 e=-0.3 drift=True N2O=0 gas=0.00
+  [it_08] t=32.5s state=race v=77km/h rank=2 lap=1 e=1.6 drift=False N2O=0 gas=0.00
+  [it_09] t=36.5s state=race v=79km/h rank=2 lap=1 e=1.3 drift=True N2O=0 gas=0.00
+  [it_10] t=40.6s state=race v=93km/h rank=1 lap=1 e=3.1 drift=False N2O=0 gas=0.00
+  [it_11] t=44.7s state=race v=87km/h rank=1 lap=1 e=-6.5 drift=False N2O=0 gas=0.00
+  [it_12] t=48.7s state=race v=110km/h rank=1 lap=1 e=-0.7 drift=False N2O=0 gas=0.00
+  [it_13] t=52.8s state=race v=110km/h rank=1 lap=1 e=-0.6 drift=False N2O=0 gas=0.00
+  [it_14] t=56.9s state=race v=81km/h rank=1 lap=1 e=-0.6 drift=False N2O=0 gas=0.00
+  [it_15] t=61.0s state=race v=67km/h rank=1 lap=1 e=0.2 drift=True N2O=0 gas=0.00
+  [it_16] t=65.0s state=race v=76km/h rank=1 lap=1 e=0.2 drift=False N2O=0 gas=0.00
+  [it_17] t=69.1s state=race v=62km/h rank=1 lap=1 e=5.4 drift=True N2O=0 gas=0.00
+  [it_spun_1] t=72.0s state=race v=49km/h rank=1 lap=1 e=1.1 drift=False N2O=0 gas=0.00
+  [it_spun_2] t=72.2s state=race v=28km/h rank=1 lap=1 e=3.1 drift=False N2O=0 gas=0.00
+  [it_18] t=72.9s state=race v=9km/h rank=1 lap=1 e=2.7 drift=False N2O=0 gas=0.00
+  道具统计: [[1, "\u98ce\u4e4b\u5b50", 17, 9, 0, 0], [6, "\u5c0f\u6a58\u5b50", 25, 8, 7, 0], [5, "night", 12, 3, 4, 0], [4, "\u963f\u5149", 32, 0, 4, 0], [2, "\u4f60", 24, 0, 1, 6], [3, "\u96f6\u5f0f", 30, 0, 4, 0]]
+  玩家: {"state": "race", "raceT": 74.66666666667216, "mine": ["angel", null], "slot": 1, "missiles": 0, "bombs": 1, "bananas": 3, "shield": 0, "magnet": 0, "spinT": -0.00833333333332984, "anyShield": false, "anyMagnet": true, "stats": {"top": 146.09277481401068, "drifts": 21, "mini": 0, "dbl": 0, "wcw": 0, "cut": 0, "swing": 0, "side": 0, "nitro": 0, "gas": 0, "hits": 0, "perfect": 0, "resets": 0, "items": 24, "itemHits": 0, "spun": 1, "blocks": 6}}
+  ITEM OK（材质数值都是有限数，没有黑屏重拍；道具用出 140 次）

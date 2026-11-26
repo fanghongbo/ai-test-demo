@@ -1,0 +1,14 @@
+$ python -X utf8 tools/qa/game_check.py drive --out shots/evidence/drive
+# 2026-11-26 23:59，22 秒，通过
+
+[01_countdown] t=0.0s state=countdown v=0km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  完美起步 1
+  [02_go] t=0.5s state=race v=28km/h rank=5 lap=0 e=-3.1 drift=False N2O=0 gas=0.00
+  [03_accel] t=3.2s state=race v=122km/h rank=3 lap=1 e=-5.9 drift=False N2O=0 gas=0.00
+  [04_drift] t=3.6s state=race v=128km/h rank=2 lap=1 e=-4.5 drift=True N2O=0 gas=0.10
+  [05_mini] t=4.3s state=race v=152km/h rank=2 lap=1 e=5.4 drift=False N2O=0 gas=0.21
+  小喷次数 1 集气 0.21
+  [07_racing] t=7.4s state=race v=37km/h rank=6 lap=1 e=-8.0 drift=False N2O=0 gas=0.21
+  [08_pause] t=7.4s state=race v=36km/h rank=6 lap=1 e=-8.0 drift=False N2O=0 gas=0.21
+  [09_standings] t=8.3s state=race v=36km/h rank=6 lap=1 e=-8.3 drift=False N2O=0 gas=0.21
+  最终 {"state": "race", "rs": "race", "paused": false, "kmh": 36.431048217646975, "rank": 6, "lap": 1, "e": -8.282592290536183, "s": 149.86503193209427, "drifting": false, "nitro": 0, "gas": 0.20823643955588253, "nitroT": 0, "miniT": -0.005000000000000648, "raceT": 8.27500000000017, "stats": {"top": 158.68323123363794, "drifts": 1, "mini": 1, "dbl": 0, "wcw": 0, "cut": 0, "swing": 0, "side": 0, "nitro": 0, "gas": 0, "hits": 2, "perfect": 1, "resets": 0, "items": 0, "itemHits": 0, "spun": 0, "blocks": 0}}
