@@ -1,0 +1,19 @@
+$ python -X utf8 tools/qa/audio_check.py
+# 2026-11-28 02:51，70 秒，通过
+
+audio context: {"started": true, "state": "running", "rate": 44100, "latency": 0.01, "now": 1.56, "nowEnd": 60.36}
+  bed_title        peak 0.2547  rms 0.0620
+  whale            peak 0.5485  rms 0.1464
+  creak            peak 0.4000  rms 0.1082
+  exhale           peak 0.3574  rms 0.0978
+  clicks           peak 0.4150  rms 0.1031
+  bed_title_again  peak 0.2114  rms 0.0620
+  chord            peak 0.3778  rms 0.1056
+  bed_free_still   peak 0.1976  rms 0.0582
+  swim_boost       peak 0.3279  rms 0.0772
+  swim_cruise      peak 0.2366  rms 0.0605
+  volume_0.3       peak 0.0694  rms 0.0212
+  muted            peak 0.0000  rms 0.0000
+  unmuted          peak 0.2004  rms 0.0594
+  bed_night        peak 0.2534  rms 0.0726
+AUDIO OK

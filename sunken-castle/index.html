@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>深海王城 · 海底城堡世界</title>
+  <meta name="description" content="一座沉在四十米水下的王城：珊瑚花园、巨藻林、沉船、断崖上的神庙和巨像。Three.js 实时渲染，全部程序化生成，不带任何图片或模型文件。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <div id="load">
+    <div class="mark">深海王城</div>
+    <div id="loadText">正在注入海水…</div>
+    <div class="bar"><i id="loadBar"></i></div>
+  </div>
+  <div id="error" hidden></div>
+
+  <!-- 标题画面：场景在后面慢慢地转 -->
+  <section id="title" class="screen" hidden aria-label="标题画面">
+    <div class="box">
+      <p class="kicker">一座可以游进去的海底世界</p>
+      <h1>深海王城</h1>
+      <p class="sub">沉在四十米水下的一座王城，四周是珊瑚花园、巨藻林、沉船，和断崖边的神庙与巨像。</p>
+      <nav class="menu">
+        <button data-act="tour">开始巡游<small>T</small></button>
+        <button data-act="free">自由潜泳<small>F</small></button>
+        <div class="minor">
+          <button data-act="settings">设置</button>
+          <button data-act="help">操作说明</button>
+        </div>
+      </nav>
+      <p class="credit">本项目由 GLM-5.4 开发</p>
+    </div>
+  </section>
+
+  <!-- 潜水的仪表 -->
+  <div id="hud" class="hud" hidden>
+    <div class="depth" aria-label="深度">
+      <div class="ruler"><s style="bottom:0%">60</s><s style="bottom:50%">30</s><s style="bottom:100%">0</s><i id="depthTick"></i></div>
+      <div class="num"><b id="depthV">36</b><span>深度 · 米</span></div>
+    </div>
+    <div class="place">
+      <div class="compass"><div class="strip" id="compassStrip"></div></div>
+      <div class="name" id="placeName">王城</div>
+    </div>
+    <div class="meta" id="meta"></div>
+    <div class="hint" id="hint"></div>
+    <div class="speed" id="speedV"></div>
+  </div>
+
+  <!-- 巡游：字幕和进度 -->
+  <div id="caption" class="caption" hidden>
+    <div class="cap" id="capBox"><small id="capIdx"></small><span class="place" id="capPlace"></span><p id="capText"></p></div>
+    <div class="progress" id="progress"><i id="progressBar"></i></div>
+  </div>
+
+  <!-- 设置 / 暂停 / 说明 -->
+  <section id="panel" class="screen" hidden aria-label="菜单">
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+      <h2 id="panelTitle"></h2>
+      <p class="lead" id="panelLead"></p>
+      <div id="panelBody"></div>
+      <div class="foot"><span id="panelFoot"></span><button class="ghost" data-act="back">返回<small style="margin-left:8px">Esc</small></button></div>
+    </div>
+  </section>
+
+  <!-- 触屏：左边的摇杆，右边的升降和疾游 -->
+  <div id="touch" class="touch" hidden>
+    <div class="stick" id="stick"><i id="stickKnob"></i></div>
+    <div class="pad">
+      <button data-key="up" aria-label="上升">▲</button>
+      <button data-key="down" aria-label="下降">▼</button>
+      <button data-key="boost" class="wide" aria-label="疾游">疾游</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "sunken-castle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "深海王城 - 海底城堡世界（Three.js r180 写实渲染，零外部资源）",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "prod": "node build.mjs --prod",
+    "test": "node --test tests/",
+    "qa": "python -X utf8 tools/qa/run_all.py",
+    "serve": "node tools/serve.mjs 5373"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

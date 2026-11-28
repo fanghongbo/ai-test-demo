@@ -1,0 +1,21 @@
+$ python -X utf8 tools/qa/audit_geo.py
+# 2026-11-28 02:51，11 秒，通过
+
+scene: {"meshes": 1366, "instancedMeshes": 1309, "instances": 13495, "triangles": 10363761, "geometries": 112, "geometryMB": 129.4, "materials": 48, "textures": 48, "textureMB": 144, "programs": 64, "lights": 11, "maxAnisotropy": 16, "glGeometries": 134, "glTextures": 87, "sampleRateShadow": 4096}
+groups (9):
+  world          1339 个网格   11774 个实例    9.48 百万个三角形
+  fish             13 个网格    1652 个实例    0.74 百万个三角形
+  surface           1 个网格       0 个实例    0.08 百万个三角形
+  fauna             8 个网格      34 个实例    0.06 百万个三角形
+  snow              1 个网格       0 个实例    0.00 百万个三角形
+  waterDome         1 个网格       0 个实例    0.00 百万个三角形
+  lightPools        1 个网格       0 个实例    0.00 百万个三角形
+  bubbles           1 个网格       0 个实例    0.00 百万个三角形
+  lanternGlow       1 个网格      35 个实例    0.00 百万个三角形
+lights: {"DirectionalLight(shadow)": 1, "PointLight": 10}
+biggest textures: .shadowMap 4096x4096 87818KB, 1009 2633x1024 14113KB, water.caustics 1024x1024 5489KB, surface.reflection 512x512 1372KB, 1009 512x512 1372KB, 1009 512x512 1372KB, 1009 512x512 1372KB, 1009 512x512 1372KB
+never culled: 5 ['Scene/waterDome', 'Scene/surface', 'Scene/snow', 'Scene/bubbles', 'Scene/lightPools']
+BLACK 0
+IGNORED 0
+NAN 0
+AUDIT OK

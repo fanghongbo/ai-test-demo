@@ -1,0 +1,22 @@
+$ python -X utf8 tools/qa/gallery.py --out docs/gallery
+# 2026-11-28 02:57，151 秒，通过
+
+title        136 KB  afternoon clear    level 2  
+  gate         155 KB  afternoon clear    level 2  
+  guardian     241 KB  afternoon clear    level 2  
+  passage      147 KB  afternoon clear    level 2  
+  hall         160 KB  afternoon clear    level 2  
+  throne       174 KB  afternoon clear    level 2  
+  court        129 KB  dusk      clear    level 2  
+  garden       262 KB  afternoon clear    level 2  
+  kelp         183 KB  afternoon clear    level 2  
+  wreck        140 KB  afternoon clear    level 2  
+  village      113 KB  dusk      clear    level 2  
+  temple       132 KB  afternoon clear    level 2  
+  dome         168 KB  afternoon clear    level 2  
+  arch         114 KB  afternoon clear    level 2  
+  night        151 KB  night     clear    level 2  
+  hall-night   222 KB  night     clear    level 2  
+  colossus      75 KB  afternoon crystal  level 2  
+  ui.jpg （交互检查顺手截的界面总图）
+gallery -> docs\gallery

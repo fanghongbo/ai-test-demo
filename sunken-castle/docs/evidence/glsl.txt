@@ -1,0 +1,4 @@
+$ python -X utf8 tools/qa/glsl.py --wait 2500
+# 2026-11-28 02:46，12 秒，通过
+
+ready=True  logs=0  errors/warnings=0

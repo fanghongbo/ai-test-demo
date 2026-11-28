@@ -1,0 +1,52 @@
+$ python -X utf8 tools/qa/app_check.py
+# 2026-11-28 02:47，90 秒，通过
+
+[ok] 启动：场景就绪  12.2 秒（含浏览器启动）
+[ok] 启动：加载层揭开
+[ok] 标题画面  {"mode": "title", "panel": null, "paused": false, "hour": "afternoon", "clarity": "clear", "quality": "auto", "level": 2, "night": 0, "fps": 42.8, "pos": [14.5, -27.45, 14.57], "shot": null, "shotT": 0, "hidden": false, "locked": false}
+[ok] 标题上写着“本项目由 GLM-5.4 开发”
+[ok] 画质默认自动、从最高档起步  quality auto level 2
+[ok] 回车开始巡游  tour bridge 字幕 ['01 / 16', '潟湖 · 石桥', 25]
+[ok] → 下一个镜头
+[ok] ← 上一个镜头
+[ok] 空格暂停巡游
+[ok] 空格继续
+[ok] T 切到自由潜泳，镜头留在原地  free 从 [-11.17, -45.62, 56.13] 到 [-11.17, -45.62, 56.13]，指针锁定 True
+[ok] 仪表：深度读数对得上  深度 46，镜头 y = -45.62
+[ok] 鼠标转视角（指针锁定）  朝向 -0.55 → -0.97
+[ok] W 往前游  [1.2, -30.6, 13] → [0.98, -30.42, 9.41]
+[ok] Shift 疾游：更快、视野略宽、速度亮出来  速度 9.1，视野 70.6
+[ok] 空格上升、C 下降  y -30.0 → -26.6 → -29.3
+[ok] D 往右平移
+[ok] 疾游到城门，被铁闸挡住、不穿墙  {"pos": [-1.63, -28.24, -27.3], "clear": true, "ground": true}
+[ok] R 回到石桥  [1.2, -30.6, 13]
+[ok] Esc 打开暂停菜单，画面停住  {"mode": "free", "panel": "pause", "paused": true, "hour": "afternoon", "clarity": "clear", "quality": "auto", "level": 2, "night": 0, "fps": 54.3, "pos": [1.2, -30.6, 13], "shot": null, "shotT": 0.266, "hidden": false, "locked": false}
+[ok] 设置面板有七项  时刻 水质 画质 视角灵敏度 镜头晃动 巡游字幕 声音
+[ok] 设置点了就生效  {"mode": "free", "panel": "settings", "paused": true, "hour": "night", "clarity": "hazy", "quality": "1", "level": 1, "night": 1, "fps": 54.7, "pos": [1.2, -30.6, 13], "shot": null, "shotT": 0.266, "hidden": false, "locked": false} 晃动 0 字幕 False
+[ok] 换了画质档，海雪和气泡的投影系数还是正常的数  [True, True]
+[ok] 音量滑块
+[ok] 设置存进浏览器  {"hour": "night", "clarity": "hazy", "quality": "1", "sens": 1, "sway": false, "captions": false, "sound": true, "volume": 0.45}
+[ok] 返回：关掉菜单、继续潜泳  {"mode": "free", "panel": null, "paused": false, "hour": "night", "clarity": "hazy", "quality": "1", "level": 1, "night": 1, "fps": 54.8, "pos": [1.2, -30.6, 13], "shot": null, "shotT": 0.266, "hidden": false, "locked": true}
+[ok] M 静音开关
+[ok] H 隐藏界面、再按一次回来
+[ok] 1…5 换时刻  morning noon afternoon dusk night
+[ok] T 切回巡游
+[ok] 回到标题
+[ok] 标题上打开操作说明  312 字
+[ok] Esc 关掉说明，标题没被暂停
+[ok] 标题上的设置也开得了、关得上
+[ok] 点“开始巡游”
+[ok] “继续巡游”
+[ok] 设置存下来：重新打开还是上次的  {"mode": "title", "panel": null, "paused": false, "hour": "night", "clarity": "hazy", "quality": "1", "level": 1, "night": 1, "fps": 5.7, "pos": [14.59, -27.44, 14.49], "shot": null, "shotT": 0, "hidden": false, "locked": false}
+[ok] 地址栏参数：时刻、水质、画质、巡游第几个镜头、藏起界面  {"mode": "tour", "panel": null, "paused": false, "hour": "dusk", "clarity": "soft", "quality": "1", "level": 1, "night": 0, "fps": 5.6, "pos": [-0.01, -33.04, -60.12], "shot": "hall", "shotT": 0.01, "hidden": true, "locked": false}
+[ok] 选了流畅档就停在流畅档：过 8 秒没有被自动画质偷偷升回去  [0, '0']
+[ok] 地址栏参数：直接潜泳、不锁鼠标；乱填的参数退回默认值  {"mode": "free", "panel": null, "paused": false, "hour": "afternoon", "clarity": "clear", "quality": "auto", "level": 2, "night": 0, "fps": 5.5, "pos": [1.2, -30.6, 13], "shot": null, "shotT": 0, "hidden": false, "locked": false}
+[ok] 窗口改成竖的：画布的绘制缓冲、镜头的宽高比、悬浮物的投影都跟着变  [900, 1500, 900, 1500, 0.6, True]
+[ok] 手机：标题排得下
+[ok] 手机：点“自由潜泳”出摇杆和按键  {"mode": "free", "panel": null, "paused": false, "hour": "afternoon", "clarity": "clear", "quality": "auto", "level": 2, "night": 0, "fps": 54.9, "pos": [1.2, -30.6, 13], "shot": null, "shotT": 0, "hidden": false, "locked": false}
+[ok] 手机：推摇杆就游  摇杆 [0.746268656716418, 0.14925373134328357]，游了 2.8 米
+[ok] 手机：▲ 上升、“疾游”加速  升降 1，疾游 [True, True]
+[ok] 手机：拖着看
+console: 干净
+46/46 项通过
+APP OK
