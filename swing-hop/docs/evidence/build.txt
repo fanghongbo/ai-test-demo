@@ -1,0 +1,9 @@
+$ node build.mjs --prod
+# 2026-11-28 14:21，0 秒，通过
+
+[build] built app.js (prod)
+
+  app.js      801.7kb
+  app.js.map    3.3mb
+
+Done in 114ms

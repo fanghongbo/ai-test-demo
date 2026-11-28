@@ -1,0 +1,52 @@
+$ python -X utf8 tools/qa/app_check.py
+# 2026-11-28 14:22，55 秒，通过
+
+[ok] 启动：场景就绪  7.4 秒（含浏览器启动）
+[ok] 标题画面  {"mode": "title", "t": 0.657, "score": 0, "combo": 0, "best": 0, "node": 0, "state": "ride", "x": 0, "y": 1.43, "charge": null, "wolf": null, "crack": null, "over": null, "paused": false, "level": 2, "slow": 0, "flash": 0, "seen": false}
+[ok] 标题上写着“本项目由 GLM-5.4 开发”
+[ok] 电脑上按钮旁写着按键（空格 / 回车）
+[ok] 画质默认自动、从最高档起步  quality auto level 2
+[ok] 样式表里的规则浏览器都认了  107 条
+[ok] 空格开始：进入游戏，界面切过来  {"mode": "play", "t": 3.6, "score": 0, "combo": 0, "best": 0, "node": 0, "state": "ride", "x": 0, "y": 1.43, "charge": null, "wolf": null, "crack": null, "over": null, "paused": false, "level": 2, "slow": 0, "flash": 0, "seen": false}
+[ok] 开始那一下不算蓄力
+[ok] 一开始有操作提示
+[ok] 按住鼠标在蓄力，画面下沿画出蓄力条  charge 0.212  {"on": true, "fill": 24, "h": 14, "op": 1, "bg": "rgb(255, 249, 236)", "cx": 800, "bottom": 34, "fillW": 43.671875}
+[ok] 松开鼠标起跳，落在下一个秋千上  node 1 score 3 state ride
+[ok] 第一跳以后操作提示收起来
+[ok] 空格按住、松开也一样能跳  node 2 score 8
+[ok] 荡过两个秋千，风暴狼开始追  狼在后面 29.99 米
+[ok] 左上角出现狼的距离
+[ok] ↑ 键和空格一样  node 3
+[ok] Esc 暂停：弹出菜单，规则停住  t 3.875 → 3.875
+[ok] 再按 Esc 继续
+[ok] 点暂停按钮：暂停，而且没有顺带蓄力
+[ok] 暂停里进设置
+[ok] 画质选“流畅”：马上换过去  {"quality": "0", "sound": true, "volume": 0.8, "shake": true, "assist": false, "autoLevel": 0}
+[ok] 打开落点辅助
+[ok] 画质选“极致”
+[ok] 设置里返回，回到暂停菜单
+[ok] 暂停菜单上按空格继续，不蓄力
+[ok] 按住时画出这一跳的弧线  {"ok": true, "visible": true, "count": 17, "charge": 0.218, "inp": {"held": true, "queued": 0}}
+[ok] M 静音
+[ok] 再按 M 有声
+[ok] 按得太轻：掉下去，这局结束  {"reason": "fall", "text": "掉进云海了", "score": 10, "best": 10, "record": true, "jumps": 5, "perfects": 2, "maxCombo": 2, "maxNode": 4}
+[ok] 结算卡片写着“掉进云海了”和分数  掉进云海了，10
+[ok] 最高分存进了浏览器  best 10
+[ok] 空格再来一局：从头开始  {"mode": "play", "t": 0.406, "score": 0, "combo": 0, "best": 10, "node": 0, "state": "ride", "x": 0, "y": 1.45, "charge": null, "wolf": null, "crack": null, "over": null, "paused": false, "level": 2, "slow": 0, "flash": 0, "seen": false}
+[ok] 被风暴狼追上：结束  {"reason": "caught", "text": "被风暴狼追上了", "score": 0, "best": 10, "record": false, "jumps": 0, "perfects": 0, "maxCombo": 0, "maxNode": 8}
+[ok] 结算上按 R 也是再来一局  {"mode": "play", "t": 0.406, "score": 0, "combo": 0, "best": 10, "node": 0, "state": "ride", "x": 0, "y": 1.403, "charge
+[ok] 站在裂缝的旧秋千上太久：秋千断了  第 29 个
+[ok] 回到标题
+[ok] 怎么玩
+[ok] Esc 关掉“怎么玩”
+[ok] 设置和最高分都记着，刷新以后还在  {"quality": "auto", "sound": true, "volume": 0.8, "shake": true, "assist": true, "autoLevel": 2, "best": 10}
+[ok] 改窗口大小：画布跟着变  1600×900
+[ok] 手机：按钮上不写键盘按键
+[ok] 手机：怎么玩里写的是“按住屏幕”
+[ok] 手机：说明一屏放得下，不用滚动  336 / 336
+[ok] 手机：手指按着屏幕在蓄力  charge 0.143
+[ok] 手机：松手起跳，落在下一个秋千上  node 1 state ride
+[ok] 竖屏：也能玩，开始按钮和提示都在
+console: 干净
+46/46 项通过
+APP OK

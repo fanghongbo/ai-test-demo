@@ -1,0 +1,19 @@
+$ python -X utf8 tools/qa/gallery.py --out docs/gallery
+# 2026-11-28 14:26，42 秒，通过
+
+title          1600x900    181 KB  第 0 个秋千  0 分  狼 None
+  start          1600x900    166 KB  第 0 个秋千  0 分  狼 None
+  charge         1600x900    167 KB  第 0 个秋千  0 分  狼 None
+  jump           1600x900    156 KB  第 0 个秋千  0 分  狼 None
+  perfect        1600x900    178 KB  第 1 个秋千  3 分  狼 None
+  gold           1600x900    192 KB  第 16 个秋千  8 分  狼 291.69
+  cracked        1600x900    175 KB  第 29 个秋千  3 分  狼 286.63
+  broken         1600x900    173 KB  第 29 个秋千  3 分  狼 271.86
+  wolf           1600x900    183 KB  第 14 个秋千  0 分  狼 8.35
+  cover          1280x720    124 KB  第 14 个秋千  0 分  狼 5.04
+  caught         1600x900    177 KB  第 14 个秋千  0 分  狼 0.59
+  over           1600x900    171 KB  第 14 个秋千  0 分  狼 0.45
+  mobile         1688x780    153 KB  第 0 个秋千  0 分  狼 None
+  ui             （交互检查顺手截的界面总图）
+console: 干净
+gallery -> docs\gallery

@@ -1,0 +1,21 @@
+{
+  "name": "swing-hop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "秋千跳跳 - 云海秋千上的 2.5D 跳跃游戏（Three.js r180，全部程序化，零外部资源）",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "prod": "node build.mjs --prod",
+    "test": "node --test tests/",
+    "qa": "python -X utf8 tools/qa/run_all.py",
+    "serve": "node tools/serve.mjs 5374"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

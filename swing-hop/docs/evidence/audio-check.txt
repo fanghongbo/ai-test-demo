@@ -1,0 +1,28 @@
+$ python -X utf8 tools/qa/audio_check.py
+# 2026-11-28 14:24，59 秒，通过
+
+audio context: {"started": true, "state": "running", "rate": 44100, "latency": 0.01, "now": 1.52, "nowEnd": 52.3, "wolf": 334.23}
+  bed_title    peak 0.0825  rms 0.0228
+  jump         peak 0.3821  rms 0.0404
+  land         peak 0.2933  rms 0.0416
+  perfect      peak 0.4050  rms 0.0506
+  slip         peak 0.3021  rms 0.0439
+  fall         peak 0.2356  rms 0.0397
+  cloud        peak 0.1496  rms 0.0288
+  howl         peak 0.2455  rms 0.0462
+  creak        peak 0.1974  rms 0.0321
+  snap         peak 0.2923  rms 0.0450
+  caught       peak 0.5236  rms 0.0743
+  over         peak 0.1673  rms 0.0319
+  record       peak 0.2942  rms 0.0537
+  bed_again    peak 0.0598  rms 0.0209
+  charging     peak 0.1190  rms 0.0483
+  wolf_near    peak 0.3389  rms 0.0598
+  wolf_far     peak 0.0644  rms 0.0215
+  paused       peak 0.0000  rms 0.0000
+  resumed      peak 0.0624  rms 0.0212
+  volume_0.3   peak 0.0208  rms 0.0077
+  volume_0.8   peak 0.0629  rms 0.0215
+  muted        peak 0.0000  rms 0.0000
+  unmuted      peak 0.0577  rms 0.0208
+AUDIO OK

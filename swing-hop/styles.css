@@ -1,0 +1,198 @@
+/* 界面：和场景同一套颜色——奶油色的纸片、墨色的字、珊瑚红的按钮。纸片有描边和一条硬投影，像贴上去的贴纸。 */
+:root {
+  --paper: #fff9ec;
+  --paper-2: #fff3d9;
+  --ink: #2e3440;
+  --ink-soft: #6c7686;
+  --coral: #ff6b5c;
+  --coral-dark: #e2544a;
+  --sun: #ffc94d;
+  --sun-dark: #e5a62a;
+  --sky: #5fccf5;
+  --mint: #5ee0b0;
+  --danger: #e5533d;
+  --font: "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #d2e4f5; }
+body { font-family: var(--font); color: var(--ink); -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+button { font-family: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+#view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+
+/* ---------- 加载 ---------- */
+#load { position: fixed; inset: 0; z-index: 40; display: grid; place-content: center; justify-items: center; gap: 14px; background: linear-gradient(#84c6f3, #fbe4c0); transition: opacity 0.5s; }
+#load.gone { opacity: 0; pointer-events: none; }
+#load .mark { font-size: clamp(34px, 6vw, 56px); font-weight: 900; color: var(--paper); -webkit-text-stroke: 8px var(--ink); paint-order: stroke fill; letter-spacing: 0.06em; }
+#loadText { font-size: 15px; color: var(--ink); opacity: 0.75; }
+#load .bar { width: 180px; height: 12px; border: 2.5px solid var(--ink); border-radius: 999px; background: var(--paper); overflow: hidden; }
+#load .bar i { display: block; height: 100%; width: 0; background: var(--coral); transition: width 0.25s; }
+
+#error { position: fixed; left: 50%; top: 40%; transform: translate(-50%, -50%); z-index: 50; max-width: 520px; padding: 20px 24px; background: var(--paper); border: 3px solid var(--ink); border-radius: 18px; font-size: 15px; line-height: 1.6; white-space: pre-wrap; }
+
+/* ---------- 整屏的界面 ---------- */
+.screen { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; }
+.screen.dim { background: rgba(42, 38, 80, 0.38); backdrop-filter: blur(3px); }
+#pops { position: fixed; inset: 0; z-index: 12; pointer-events: none; overflow: hidden; }
+
+.kicker { margin: 0 0 6px; font-size: 15px; font-weight: 700; letter-spacing: 0.28em; color: var(--coral-dark); text-shadow: 0 1px 0 rgba(255, 249, 236, 0.95), 0 0 8px rgba(255, 249, 236, 0.95); }
+.credit { margin: 18px 0 0; font-size: 12px; color: var(--ink); opacity: 0.8; text-shadow: 0 1px 0 rgba(255, 249, 236, 0.9), 0 0 6px rgba(255, 249, 236, 0.9); }
+
+/* ---------- 标题 ---------- */
+#title { place-items: center end; padding-right: clamp(20px, 9vw, 150px); }
+.titleBox { position: relative; max-width: 470px; padding: 30px 34px; text-align: left; }
+/* 标题后面垫一团柔白的“云”，字压在树上也看得清。不能太浓：太浓会把身后的树洗得发白 */
+.titleBox::before { content: ""; position: absolute; inset: -26px -40px; z-index: -1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 252, 244, 0.72), rgba(255, 252, 244, 0.48) 55%, rgba(255, 252, 244, 0)); }
+.logo { margin: 0; font-size: clamp(58px, 9.5vw, 118px); line-height: 1.05; font-weight: 900; letter-spacing: 0.04em; color: var(--paper);
+  -webkit-text-stroke: 10px var(--ink); paint-order: stroke fill; text-shadow: 0 10px 0 rgba(46, 52, 64, 0.22); }
+.en { margin: 6px 0 0 6px; display: inline-block; padding: 4px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.32em; color: var(--paper); background: var(--ink); border-radius: 999px; }
+.sub { margin: 22px 0 0; font-size: 16px; line-height: 1.65; color: var(--ink); text-shadow: 0 1px 0 rgba(255, 249, 236, 0.9), 0 0 10px rgba(255, 249, 236, 0.9); }
+.best { display: inline-block; margin: 16px 0 0; padding: 6px 16px; font-size: 15px; font-weight: 700; background: var(--paper); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.25); }
+.best b { color: var(--coral-dark); font-size: 18px; }
+
+/* ---------- 按钮 ---------- */
+.menu { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 26px; }
+.menu.center { align-items: center; }
+button.big { display: inline-flex; align-items: center; gap: 14px; padding: 14px 30px 14px 36px; font-size: 24px; font-weight: 900; letter-spacing: 0.08em; color: var(--paper); background: var(--coral);
+  border: 3px solid var(--ink); border-radius: 999px; box-shadow: 0 7px 0 var(--ink); transition: transform 0.08s, box-shadow 0.08s, background 0.15s; }
+button.big small, button.ghost small { padding: 3px 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); background: var(--paper); border-radius: 999px; }
+button.big:hover { background: #ff7d6f; transform: translateY(-2px); box-shadow: 0 9px 0 var(--ink); }
+button.big:active { transform: translateY(5px); box-shadow: 0 2px 0 var(--ink); }
+.minor { display: flex; gap: 10px; }
+.minor button, button.ghost { padding: 9px 20px; font-size: 15px; font-weight: 700; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.9); transition: transform 0.08s, box-shadow 0.08s; }
+.minor button:hover, button.ghost:hover { transform: translateY(-1px); box-shadow: 0 5px 0 rgba(46, 52, 64, 0.9); }
+.minor button:active, button.ghost:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(46, 52, 64, 0.9); }
+button.ghost { display: inline-flex; align-items: center; gap: 10px; }
+
+/* ---------- 玩的时候 ---------- */
+#hud { position: fixed; inset: 0; z-index: 10; pointer-events: none; font-variant-numeric: tabular-nums; }
+#hud .score { position: absolute; left: 50%; top: calc(14px + env(safe-area-inset-top)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+#hud .score b { font-size: clamp(44px, 6.4vw, 72px); line-height: 1; font-weight: 900; color: var(--paper); -webkit-text-stroke: 7px var(--ink); paint-order: stroke fill; text-shadow: 0 5px 0 rgba(46, 52, 64, 0.22); transition: transform 0.12s; }
+#hud .score b.pop { transform: scale(1.18); }
+#hud .score small { margin-top: 2px; padding: 2px 12px; font-size: 12px; font-weight: 700; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; }
+#hud .combo { position: absolute; left: 50%; top: calc(96px + env(safe-area-inset-top)); transform: translateX(-50%); padding: 4px 14px; font-size: 14px; font-weight: 800; color: var(--ink); background: var(--sun); border: 2.5px solid var(--ink); border-radius: 999px; animation: comboIn 0.3s ease-out; }
+#hud .combo b { font-size: 17px; }
+@keyframes comboIn { from { transform: translateX(-50%) scale(0.6); } to { transform: translateX(-50%) scale(1); } }
+
+#hud .wolf { position: absolute; left: calc(16px + env(safe-area-inset-left)); top: calc(16px + env(safe-area-inset-top)); display: flex; align-items: center; gap: 8px; padding: 7px 16px 7px 12px; font-size: 14px; font-weight: 800; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.25); }
+#hud .wolf b { font-size: 17px; }
+#hud .wolf i { width: 12px; height: 12px; border-radius: 50%; background: var(--ink-soft); }
+#hud .wolf.near { background: #ffe1d9; border-color: var(--danger); animation: wolfPulse 0.5s ease-in-out infinite alternate; }
+#hud .wolf.near i { background: var(--danger); }
+@keyframes wolfPulse { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+#hud .corner { position: absolute; right: calc(14px + env(safe-area-inset-right)); top: calc(14px + env(safe-area-inset-top)); display: flex; gap: 8px; pointer-events: auto; }
+#hud .corner button { width: 44px; height: 44px; display: grid; place-items: center; font-size: 17px; font-weight: 900; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 50%; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.9); }
+#hud .corner button:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(46, 52, 64, 0.9); }
+#hud .corner button { position: relative; }
+/* 关掉声音：在音符上划一道 */
+#hud .corner button.off::after { content: ""; position: absolute; left: 8px; top: 20px; width: 28px; height: 3px; border-radius: 2px; background: var(--ink); transform: rotate(-38deg); }
+
+#hud .charge { position: absolute; left: 50%; bottom: calc(34px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: 190px; height: 14px; padding: 2px; background: var(--paper); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.25); opacity: 0; transition: opacity 0.12s; }
+#hud .charge.on { opacity: 1; }
+#hud .charge i { display: block; width: 0; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--mint), var(--sun) 70%, var(--coral)); }
+
+#hud .hint { position: absolute; left: 50%; bottom: calc(66px + env(safe-area-inset-bottom)); transform: translateX(-50%); padding: 9px 20px; font-size: 15px; font-weight: 700; white-space: nowrap; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 rgba(46, 52, 64, 0.25); animation: hintIn 0.35s ease-out; }
+@keyframes hintIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+/* 得分时从秋千上飘起来的字 */
+.pop { position: absolute; transform: translate(-50%, -50%); font-weight: 900; white-space: nowrap; color: var(--paper); -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; animation: floatUp 1.05s ease-out forwards; }
+.pop.gain { font-size: 30px; }
+.pop.perfect { font-size: 22px; color: var(--sun); }
+.pop.warn { font-size: 22px; color: #ffb3a7; }
+.pop.gold { color: var(--sun); }
+@keyframes floatUp { 0% { opacity: 0; transform: translate(-50%, -30%) scale(0.6); } 18% { opacity: 1; transform: translate(-50%, -70%) scale(1.1); } 100% { opacity: 0; transform: translate(-50%, -260%) scale(1); } }
+
+/* ---------- 纸片：设置 / 怎么玩 / 暂停 / 结束 ---------- */
+.sheet { width: min(460px, 100%); max-height: calc(100vh - 40px); overflow: auto; padding: 28px 30px 22px; background: var(--paper); border: 3px solid var(--ink); border-radius: 26px; box-shadow: 0 10px 0 rgba(46, 52, 64, 0.3); animation: sheetIn 0.25s ease-out; }
+@keyframes sheetIn { from { opacity: 0; transform: translateY(16px) scale(0.96); } to { opacity: 1; transform: none; } }
+.sheet h2 { margin: 0 0 16px; font-size: 24px; font-weight: 900; letter-spacing: 0.04em; }
+.sheet .foot { margin-top: 20px; display: flex; justify-content: flex-end; }
+.sheet.over { text-align: center; width: min(400px, 100%); }
+.sheet.over .menu { align-items: center; }
+.sheet.over .kicker { font-size: 20px; letter-spacing: 0.12em; }
+.final { margin: 4px 0 0; display: flex; align-items: baseline; justify-content: center; gap: 6px; }
+.final b { font-size: 76px; line-height: 1.1; font-weight: 900; color: var(--ink); }
+.final span { font-size: 18px; font-weight: 700; color: var(--ink-soft); }
+.record { margin: 4px 0 0; display: inline-block; padding: 5px 16px; font-size: 15px; font-weight: 900; color: var(--ink); background: var(--sun); border: 2.5px solid var(--ink); border-radius: 999px; transform: rotate(-3deg); animation: recordIn 0.5s cubic-bezier(0.2, 1.6, 0.4, 1); }
+@keyframes recordIn { from { transform: rotate(-3deg) scale(0); } to { transform: rotate(-3deg) scale(1); } }
+.stats { margin: 16px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stats div { padding: 10px 6px; background: var(--paper-2); border: 2px solid var(--ink); border-radius: 14px; }
+.stats b { display: block; font-size: 22px; font-weight: 900; }
+.stats span { font-size: 12px; color: var(--ink-soft); font-weight: 700; }
+
+.row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 2px dashed rgba(46, 52, 64, 0.16); }
+.row:last-child { border-bottom: 0; }
+.row > span { font-size: 16px; font-weight: 700; }
+.row small { display: block; margin-top: 2px; font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+.seg { display: flex; padding: 3px; background: var(--paper-2); border: 2px solid var(--ink); border-radius: 999px; }
+.seg button { padding: 6px 13px; font-size: 14px; font-weight: 700; border-radius: 999px; color: var(--ink-soft); white-space: nowrap; }
+.seg button.on { color: var(--paper); background: var(--ink); }
+.toggle { position: relative; width: 58px; height: 32px; border: 2.5px solid var(--ink); border-radius: 999px; background: var(--paper-2); transition: background 0.15s; }
+.toggle::after { content: ""; position: absolute; left: 2px; top: 2px; width: 22px; height: 22px; border-radius: 50%; background: var(--paper); border: 2.5px solid var(--ink); transition: left 0.15s; }
+.toggle.on { background: var(--mint); }
+.toggle.on::after { left: 27px; }
+input[type="range"] { width: 150px; accent-color: var(--coral); }
+
+.lead { margin: 0 0 12px; font-size: 15px; line-height: 1.65; }
+.keys { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 4px; }
+.keys td { padding: 7px 4px; border-bottom: 2px dashed rgba(46, 52, 64, 0.16); vertical-align: top; line-height: 1.5; }
+.keys tr:last-child td { border-bottom: 0; }
+.keys td:first-child { width: 46%; font-weight: 700; white-space: nowrap; }
+kbd { display: inline-block; margin: 0 2px 2px 0; padding: 2px 9px; font-family: inherit; font-size: 13px; font-weight: 700; background: var(--paper-2); border: 2px solid var(--ink); border-radius: 8px; box-shadow: 0 2px 0 var(--ink); }
+.kinds { margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.6; }
+.kinds li { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
+.kinds i { flex: none; width: 40px; height: 14px; border: 2.5px solid var(--ink); border-radius: 4px; background: #d59c5c; }
+.kinds li:nth-child(2) i { background: var(--sun); }
+.kinds li:nth-child(3) i { width: 54px; }
+.kinds li:nth-child(4) i { background: #a08a6e; }
+
+#toast { position: fixed; left: 50%; top: 30%; z-index: 15; transform: translateX(-50%); padding: 12px 26px; font-size: 22px; font-weight: 900; color: var(--ink); background: var(--sun); border: 3px solid var(--ink); border-radius: 999px; box-shadow: 0 6px 0 rgba(46, 52, 64, 0.3); pointer-events: none; animation: toastIn 0.3s ease-out; }
+#toast.danger { background: #ffd9d2; border-color: var(--danger); color: var(--danger); }
+@keyframes toastIn { from { opacity: 0; transform: translateX(-50%) scale(0.7); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
+
+body.no-ui #hud, body.no-ui #title, body.no-ui #panel, body.no-ui #over, body.no-ui #pops, body.no-ui #toast { display: none !important; }
+
+/* ---------- 窄屏和竖屏 ---------- */
+@media (max-width: 760px) {
+  #title { place-items: end center; padding: 0 16px calc(22px + env(safe-area-inset-bottom)); }
+  .titleBox { max-width: 100%; padding: 20px 14px; text-align: center; }
+  .titleBox .menu { align-items: center; }
+  .titleBox .en { margin-left: 0; }
+  .logo { -webkit-text-stroke-width: 7px; }
+  .sub { font-size: 14px; margin-top: 14px; }
+  button.big { font-size: 20px; padding: 12px 24px 12px 28px; }
+  .logo { font-size: clamp(44px, 12vw, 64px); -webkit-text-stroke-width: 6px; }
+  .sheet { padding: 22px 20px 18px; }
+  .keys td:first-child { width: 42%; }
+  input[type="range"] { width: 110px; }
+}
+/* 很矮的屏幕（手机横屏）：纸片收紧一点，一屏放得下 */
+@media (max-height: 560px) {
+  .sheet { padding: 16px 22px 14px; border-radius: 20px; }
+  .sheet h2 { font-size: 20px; margin-bottom: 8px; }
+  .sheet .foot { margin-top: 10px; }
+  .lead { font-size: 13px; line-height: 1.5; margin-bottom: 6px; }
+  .keys { font-size: 13px; }
+  .keys td { padding: 4px; }
+  kbd { font-size: 11px; padding: 1px 7px; }
+  .kinds { font-size: 12.5px; }
+  .kinds li { padding: 3px 0; }
+  .row { padding: 6px 0; }
+  .row > span { font-size: 14px; }
+  .row small { font-size: 11px; }
+}
+@media (max-height: 520px) {              /* 手机横屏 */
+  #title { place-items: center end; padding-right: 5vw; }
+  .logo { font-size: 50px; -webkit-text-stroke-width: 5px; }
+  .sub { display: none; }
+  .titleBox { padding: 14px 22px; }
+  .titleBox .menu { margin-top: 14px; }
+  .credit { margin-top: 10px; }
+  .sheet { max-height: calc(100vh - 16px); padding: 16px 22px 14px; }
+  .final b { font-size: 54px; }
+}

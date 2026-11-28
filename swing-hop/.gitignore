@@ -1,0 +1,18 @@
+# 依赖（运行页面不需要，只有改源码重新打包时需要）
+node_modules/
+
+# 开发和检查时的产物
+shots/
+*.log
+__pycache__/
+*.pyc
+
+# 调试源码用的映射文件：build.mjs 每次都会重新生成，页面不带它也能跑
+app.js.map
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>秋千跳跳 · 云海上的秋千</title>
+  <meta name="description" content="云海上一排浮空小岛，每个岛的树上挂着一个秋千。按住蓄力、松开起跳，从一个秋千荡到下一个；后面的风暴狼一路追来。Three.js 实时渲染的 2.5D 画面，全部程序化生成，不带任何图片或模型文件。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <div id="load">
+    <div class="mark">秋千跳跳</div>
+    <div id="loadText">正在铺云海…</div>
+    <div class="bar"><i id="loadBar"></i></div>
+  </div>
+  <div id="error" hidden></div>
+
+  <!-- 标题画面：场景在后面，兔子坐在第一个秋千上 -->
+  <section id="title" class="screen" hidden aria-label="标题画面" data-ui>
+    <div class="titleBox">
+      <p class="kicker">云海上的秋千</p>
+      <h1 class="logo">秋千跳跳</h1>
+      <p class="en">SWING HOP</p>
+      <p class="sub">按住蓄力，松开起跳，从一个秋千荡到下一个。<br>别停太久——风暴狼就在后面。</p>
+      <nav class="menu">
+        <button class="big" data-act="start">开始游戏<small>空格 / 回车</small></button>
+        <div class="minor">
+          <button data-act="help">怎么玩</button>
+          <button data-act="settings">设置</button>
+        </div>
+      </nav>
+      <p class="best" id="titleBest" hidden>最佳 <b>0</b></p>
+      <p class="credit">本项目由 GLM-5.4 开发</p>
+    </div>
+  </section>
+
+  <!-- 玩的时候的界面 -->
+  <div id="hud" hidden>
+    <div class="score"><b id="scoreV">0</b><small id="bestV"></small></div>
+    <div class="combo" id="combo" hidden>完美连击 <b id="comboV">2</b></div>
+    <div class="wolf" id="wolf" hidden><i></i>风暴狼 <b id="wolfV">30</b> 米</div>
+    <div class="corner">
+      <button id="btnSound" aria-label="开关声音">♪</button>
+      <button id="btnPause" aria-label="暂停">❚❚</button>
+    </div>
+    <div class="charge" id="charge"><i id="chargeBar"></i></div>
+    <div class="hint" id="hint" hidden></div>
+  </div>
+  <div id="pops"></div>
+
+  <!-- 设置 / 怎么玩 / 暂停 -->
+  <section id="panel" class="screen" hidden aria-label="菜单" data-ui>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+      <h2 id="panelTitle"></h2>
+      <div id="panelBody"></div>
+      <div class="foot"><button class="ghost" data-act="back">返回<small>Esc</small></button></div>
+    </div>
+  </section>
+
+  <!-- 结束 -->
+  <section id="over" class="screen" hidden aria-label="游戏结束" data-ui>
+    <div class="sheet over">
+      <p class="kicker" id="overReason">掉进云海了</p>
+      <p class="final"><b id="overScore">0</b><span>分</span></p>
+      <p class="record" id="overRecord" hidden>新纪录！</p>
+      <div class="stats" id="overStats"></div>
+      <nav class="menu">
+        <button class="big" data-act="retry">再来一局<small>空格 / 回车</small></button>
+        <div class="minor"><button data-act="title">回到标题</button></div>
+      </nav>
+    </div>
+  </section>
+
+  <div id="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
